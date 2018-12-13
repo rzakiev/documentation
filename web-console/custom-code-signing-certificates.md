@@ -1,6 +1,6 @@
 # Custom Code-Signing Certificates
 
-## Signing MBS Windows Client With Custom Certificate
+## Signing the MBS Windows Client With a Custom Certificate
 
 ### Introduction
 

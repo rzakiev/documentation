@@ -61,12 +61,7 @@
     * [Modify an Administrator](web-console/mbs-api/managing-administrators/untitled-1.md)
     * [Delete an Administrator](web-console/mbs-api/managing-administrators/delete-an-administrator.md)
   * [MBS API Python Library](web-console/mbs-api/mbs-api-python-library.md)
-* [Drafts](web-console/drafts/README.md)
-  * [Custom Code-Signing Certificates](web-console/drafts/custom-code-signing-certificates.md)
-  * [New Payment Plan](web-console/drafts/new-payment-plan.md)
-  * [BackBlaze B2 Application Keys](web-console/drafts/backblaze-b2-application-keys.md)
-  * [Managing Licenses](web-console/drafts/licensing.md)
-  * [Introducing CloudBerry Drive 3.0.1](web-console/drafts/introducing-cloudberry-drive-3.0.1.md)
+* [Custom Code-Signing Certificates](web-console/custom-code-signing-certificates.md)
 * [MBS Billing](web-console/mbs-billing.md)
 
 ## Licensing & Payment
