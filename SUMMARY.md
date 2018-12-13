@@ -4,7 +4,6 @@
 
 ## Web Console
 
-* [Getting Started](web-console/initial-setup.md)
 * [Backup Storage](web-console/backup-storage/README.md)
   * [Signing Up for the Cloud](web-console/backup-storage/signing-up-for-the-cloud/README.md)
     * [Signing Up for Amazon S3](web-console/backup-storage/signing-up-for-the-cloud/signing-up-for-amazon-s3.md)
