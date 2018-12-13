@@ -24,9 +24,7 @@ Now that the credentials are generated, proceed to request the initial authentic
 
 ## Generating an Access Token
 
-First things first, you need to request a token by sending a POST request that contains the credentials from the first step.
-
-Now let's finally create and send a request. For simplification purposes, we'll leverage a Python library called _requests_ that provides powerful methods for sending HTTPS requests with just a few lines of code. If you don't have one, simply run the following command in your terminal:
+First, you need to request a token by sending a POST request that contains the credentials from the first step. For simplification purposes, we'll leverage a Python library called _requests_ that provides powerful methods for sending HTTPS requests with just a few lines of code. If you don't have one, simply run the following command in your terminal:
 
 ```bash
 pipenv install requests
