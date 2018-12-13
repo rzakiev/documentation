@@ -76,7 +76,7 @@ userName: wejfiwejf
 .expires: Sat, 12 May 2018 13:50:43 GMT
 ```
 
-And there you have it – the access token along with other critical information. Notice that each token expires two weeks after its generation. Write down the token somewhere, you'll need it to send all the other requests.
+As an output, you should get the access token along with the other critical information. Notice that each token expires two weeks after its generation. Jot down the token somewhere — you'll need it later to send all the other requests.
 
 The following pages in this section describe all available requests in detail.
 
