@@ -72,7 +72,7 @@ error_description: The user name or password is incorrect.
 Incorrect request URL
 {% endapi-method-response-example-description %}
 
-```
+```text
 Message: No HTTP resource was found that matches the request URI 'https://api.mspbackups.com/api/Prrovider/Login'.
 ```
 {% endapi-method-response-example %}
@@ -80,7 +80,7 @@ Message: No HTTP resource was found that matches the request URI 'https://api.ms
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats:
+## Request Formats:
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -106,7 +106,7 @@ Message: No HTTP resource was found that matches the request URI 'https://api.ms
 {% endtab %}
 {% endtabs %}
 
-#### Response Information:
+## Response Information:
 
 | Name | Description | Type |
 | :--- | :--- | :--- |
@@ -117,7 +117,7 @@ Message: No HTTP resource was found that matches the request URI 'https://api.ms
 | .issued | Displays the token issue date | String |
 | .expires | Displays the token expiration date | String |
 
-#### Sample Python code
+## Sample Python code
 
 ```python
 #The library required to make HTTP requests
@@ -125,22 +125,20 @@ import requests
 
 #Function that sends a request and prints out the response
 def initialiAuth (jsonCreds, requestURL):
-	authenticationRequest = requests.post('https://api.mspbackups.com/' + requestURL, json = jsonCreds)
-	print ("Status code: " + str(authenticationRequest.status_code) + "\n")
+    authenticationRequest = requests.post('https://api.mspbackups.com/' + requestURL, json = jsonCreds)
+    print ("Status code: " + str(authenticationRequest.status_code) + "\n")
 
-	authenticationData = authenticationRequest.json()
-	for key, value in authenticationData.items():
-		print (str(key) + ": " + str(value) + "\n")
+    authenticationData = authenticationRequest.json()
+    for key, value in authenticationData.items():
+        print (str(key) + ": " + str(value) + "\n")
 
 #Credentials that can be generated in MBS Web Console, in settings.
 apiCreds = {
-	"UserName" : "fake9xJKZcsy",
-	"Password" : "fakeXkjwZmAJvAQBYjja"
+    "UserName" : "fake9xJKZcsy",
+    "Password" : "fakeXkjwZmAJvAQBYjja"
 }
 
 #Call the function
 initialiAuth (apiCreds, "api/Provider/Login")
 ```
-
-
 

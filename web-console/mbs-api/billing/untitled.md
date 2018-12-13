@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -38,7 +38,7 @@ MBS user ID.
 The billing records have been successfully received
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'TotalBackupBytes': 0, 'TotalRestoreBytes': 0, 'UserID': 'someID-f98c-4fbd-aa0d-b1b5551f2df3', 'UserDetailList': [{'Computer': None, 'SizeBackup': 0, 'SizeRestore': 0, 'Prefix': None, 'AccountID': 'someID-dd51-45bf-9e2b-91f0ff9b5e41', 'Destination': 'Cloud Account (bucketName)'}]}
 ```
 {% endapi-method-response-example %}
@@ -46,7 +46,7 @@ The billing records have been successfully received
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -74,7 +74,7 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -94,7 +94,7 @@ Sample:
 | AccountID | Storage account ID | String |
 | Destination | Backup/Restore destination | String |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -160,23 +160,23 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def billingDetailsForUser(token, criteria):
-		billingDetailsForUserRequest = requests.put('https://api.mspbackups.com/api/Billing/Details', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = criteria)
+        billingDetailsForUserRequest = requests.put('https://api.mspbackups.com/api/Billing/Details', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = criteria)
 
-		if billingDetailsForUserRequest.status_code == 200:
-			print('200')
-			return billingDetailsForUserRequest.json()
-		else:
-			return billingDetailsForUserRequest.status_code
+        if billingDetailsForUserRequest.status_code == 200:
+            print('200')
+            return billingDetailsForUserRequest.json()
+        else:
+            return billingDetailsForUserRequest.status_code
 
 criteria = {
-	"UserID" : "e6199730-f98c-4fbd-aa0d-b1b5551f2df3",
-	"Date" : ""
+    "UserID" : "e6199730-f98c-4fbd-aa0d-b1b5551f2df3",
+    "Date" : ""
 }
 
 billingDetailsForUser(MBSAPItoken, criteria)

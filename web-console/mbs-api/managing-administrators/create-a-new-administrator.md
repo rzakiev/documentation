@@ -24,7 +24,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 The administrator has been successfully created!
 {% endapi-method-response-example-description %}
 
-```
+```text
 adminID
 ```
 {% endapi-method-response-example %}
@@ -32,7 +32,7 @@ adminID
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Information
+## Request Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -71,7 +71,7 @@ adminID
 | GoogleApps | Google Apps management permission | Forbidden = 0, Permitted = 1 |
 | Dashboard | Dashboard access | Forbidden = 0, Permitted = 1 |
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -80,36 +80,36 @@ adminID
 ```javascript
 Sample:
 newAdmin = {
-	"Email" : "test@test.com",
-	"InitialPassword" : "truepass",
-	"SendInstruction" : "true",
-	"FirstName" : "Robert",
-	"LastName" : "QA",
-	"Enabled" : "true",
-	"PermissionsModels": {
-		"Users": 1,
-		"StorageLimit": 1,
-		"Notification": 0,
-		"OnlineAccess": 1,
-		"Licenses": 1,
-		"Billing":1,
-		"Monitiring":1,
-		"RemoteDeploy":1,
-		"RemoteManagment":1,
-		"HelpMarketing":1,
-		"AuditLog":1,
-		"PSA":1,
-		"Administrators":1,
-		"Rebranding":1,
-		"Storage":1,
-		"ADS":1,
-		"LicenseBuy":1,
-		"LicenseActivate":1,
-		"StorageUsage":1,
-		"CapacityReport":1,
-		"GoogleApps":1,
-		"Dashboard":1
-	}
+    "Email" : "test@test.com",
+    "InitialPassword" : "truepass",
+    "SendInstruction" : "true",
+    "FirstName" : "Robert",
+    "LastName" : "QA",
+    "Enabled" : "true",
+    "PermissionsModels": {
+        "Users": 1,
+        "StorageLimit": 1,
+        "Notification": 0,
+        "OnlineAccess": 1,
+        "Licenses": 1,
+        "Billing":1,
+        "Monitiring":1,
+        "RemoteDeploy":1,
+        "RemoteManagment":1,
+        "HelpMarketing":1,
+        "AuditLog":1,
+        "PSA":1,
+        "Administrators":1,
+        "Rebranding":1,
+        "Storage":1,
+        "ADS":1,
+        "LicenseBuy":1,
+        "LicenseActivate":1,
+        "StorageUsage":1,
+        "CapacityReport":1,
+        "GoogleApps":1,
+        "Dashboard":1
+    }
 }
 ```
 {% endtab %}
@@ -159,55 +159,55 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 ID of the newly created administrator.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def createNewAdministrator(token, newAdmin):
-		createNewAdministratorRequest = requests.post('https://api.mspbackups.com/api/Administrators/', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = newAdmin)
+        createNewAdministratorRequest = requests.post('https://api.mspbackups.com/api/Administrators/', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = newAdmin)
 
-		if createNewAdministratorRequest.status_code == 200:
-			print('200')
-			return createNewAdministratorRequest.json()
-		else:
-			return createNewAdministratorRequest.status_code
-			
+        if createNewAdministratorRequest.status_code == 200:
+            print('200')
+            return createNewAdministratorRequest.json()
+        else:
+            return createNewAdministratorRequest.status_code
+
 newAdmin = {
-	"Email" : "user@me.com",
-	"InitialPassword" : "truepass",
-	"SendInstruction" : "true",
-	"FirstName" : "Robert",
-	"LastName" : "QA",
-	"Enabled" : "true",
-	"PermissionsModels": {
-		"Users": 1,
-		"StorageLimit": 1,
-		"Notification": 0,
-		"OnlineAccess": 1,
-		"Licenses": 1,
-		"Billing":1,
-		"Monitiring":1,
-		"RemoteDeploy":1,
-		"RemoteManagment":1,
-		"HelpMarketing":1,
-		"AuditLog":1,
-		"PSA":1,
-		"Administrators":1,
-		"Rebranding":1,
-		"Storage":1,
-		"ADS":1,
-		"LicenseBuy":1,
-		"LicenseActivate":1,
-		"StorageUsage":1,
-		"CapacityReport":1,
-		"GoogleApps":1,
-		"Dashboard":1
-	}
+    "Email" : "user@me.com",
+    "InitialPassword" : "truepass",
+    "SendInstruction" : "true",
+    "FirstName" : "Robert",
+    "LastName" : "QA",
+    "Enabled" : "true",
+    "PermissionsModels": {
+        "Users": 1,
+        "StorageLimit": 1,
+        "Notification": 0,
+        "OnlineAccess": 1,
+        "Licenses": 1,
+        "Billing":1,
+        "Monitiring":1,
+        "RemoteDeploy":1,
+        "RemoteManagment":1,
+        "HelpMarketing":1,
+        "AuditLog":1,
+        "PSA":1,
+        "Administrators":1,
+        "Rebranding":1,
+        "Storage":1,
+        "ADS":1,
+        "LicenseBuy":1,
+        "LicenseActivate":1,
+        "StorageUsage":1,
+        "CapacityReport":1,
+        "GoogleApps":1,
+        "Dashboard":1
+    }
 }
 
 createNewAdministrator("MBSAPItoken", newAdmin)

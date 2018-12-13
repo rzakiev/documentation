@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer + \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -38,7 +38,7 @@ User password
 The user's information has been successfully received.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'ID': 'someID', 'Email': 'someEmail', 'FirstName': '', 'LastName': '', 'NotificationEmails': [], 'Company': '', 'Enabled': True, 'LicenseManagmentMode': 1, 'DestinationList': [], 'SpaceUsed': 0}
 ```
 {% endapi-method-response-example %}
@@ -46,7 +46,7 @@ The user's information has been successfully received.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Format
+## Request Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -66,7 +66,7 @@ The user's information has been successfully received.
 {% endtab %}
 {% endtabs %}
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -88,16 +88,16 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code:
+## Sample Python Code:
 
 ```python
 import requests
 def getUserByLoginPassword (token, login, password):
-		getUserByLoginPasswordRequest = requests.put('https://api.mspbackups.com/api/Users/Authenticate', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = {"Email" : login, "Password" : password})
-		print("Get User by login & password status code: " + str(getUserByLoginPasswordRequest.status_code) + "\n")
-		print(getUserByLoginPasswordRequest.json())
-		
+        getUserByLoginPasswordRequest = requests.put('https://api.mspbackups.com/api/Users/Authenticate', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = {"Email" : login, "Password" : password})
+        print("Get User by login & password status code: " + str(getUserByLoginPasswordRequest.status_code) + "\n")
+        print(getUserByLoginPasswordRequest.json())
+
 getUserByLoginPassword(token, "login", "password")
 ```
 

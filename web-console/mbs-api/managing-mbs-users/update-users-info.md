@@ -13,7 +13,7 @@ This endpoint enables you to update a user's information.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter type="string" name="Authorization" required=true %}
-Specifies the authorization type and token. Possible value: "Bearer  \*token\*"
+Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -38,7 +38,7 @@ User ID
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -46,7 +46,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Format
+## Request Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -68,28 +68,26 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 
 def updateUserInfo(token, newInfoJSON):
-		updateUserInfoRequest = requests.put('https/api.mspbackups.com/api/Users', headers = {"Authorization": "Bearer " + token}, json = newInfoJSON)
-		print("Updated user status code: " + str(updateUserInfoRequest.status_code) + "\n")
-		return updateUserInfoRequest.status_code
-		
+        updateUserInfoRequest = requests.put('https/api.mspbackups.com/api/Users', headers = {"Authorization": "Bearer " + token}, json = newInfoJSON)
+        print("Updated user status code: " + str(updateUserInfoRequest.status_code) + "\n")
+        return updateUserInfoRequest.status_code
+
 updatedUser = {
-	"ID" : "9d6de082-741c-44fe-b067-1a36eb03fa40", #required
-	"Password" : "newUnhackablePass", #required
-	"Enabled" : False #required
+    "ID" : "9d6de082-741c-44fe-b067-1a36eb03fa40", #required
+    "Password" : "newUnhackablePass", #required
+    "Enabled" : False #required
 }
 
 print(updateUserInfo("mbsAPItoken", updatedUser))
 ```
-
-
 

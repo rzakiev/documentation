@@ -6,7 +6,7 @@ Release License from User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint enables you to release a license form user. 
+This endpoint enables you to release a license form user.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -34,7 +34,7 @@ ID of the license to be released
 The license has been successfully released from the user
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -42,7 +42,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-####  Request Formats <a id="request-formats"></a>
+## Request Formats  <a id="request-formats"></a>
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -70,28 +70,27 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information <a id="response-information-2"></a>
+## Response Information  <a id="response-information-2"></a>
 
-None if the request has been sent successfully. Otherwise, a JSON is returned containing the error message.  
+None if the request has been sent successfully. Otherwise, a JSON is returned containing the error message.
 
-
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def releaseLicenseFromUser(token, licenseID, userID):
-		releaseLicenseFromUserRequest = requests.post('https://api.mspbackups.com/api/Licenses/Release', headers = {"Authorization": "Bearer " + token}, json = {"LicenseID" : licenseID, "UserID" : userID})
+        releaseLicenseFromUserRequest = requests.post('https://api.mspbackups.com/api/Licenses/Release', headers = {"Authorization": "Bearer " + token}, json = {"LicenseID" : licenseID, "UserID" : userID})
 
-		if releaseLicenseFromUserRequest.status_code == 200:
-			print("200")
-			try:
-				print(releaseLicenseFromUserRequest.json())
-				return 1
-			except:
-				return 0
-		else:
-			print("Error :" + str(releaseLicenseFromUserRequest.status_code))
-			return releaseLicenseFromUserRequest.status_code()
+        if releaseLicenseFromUserRequest.status_code == 200:
+            print("200")
+            try:
+                print(releaseLicenseFromUserRequest.json())
+                return 1
+            except:
+                return 0
+        else:
+            print("Error :" + str(releaseLicenseFromUserRequest.status_code))
+            return releaseLicenseFromUserRequest.status_code()
 
 releaseLicenseFromUser(MBSAPItoken, licenseID, userID):
 ```

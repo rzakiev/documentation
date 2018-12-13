@@ -38,7 +38,7 @@ Display name for the destination
 The destination has been successfully added.
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -46,7 +46,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -76,32 +76,30 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None if the request has been sent successfully. Otherwise, a JSON is returned containing the error message.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def addDestination(token, destination):
-		addDestinationRequest = requests.post('https://api.mspbackups.com/api/Accounts/AddDestination', headers = {"Authorization": "Bearer " + token}, json = destination)
+        addDestinationRequest = requests.post('https://api.mspbackups.com/api/Accounts/AddDestination', headers = {"Authorization": "Bearer " + token}, json = destination)
 
-		if addDestinationRequest.status_code == 200:
-			print('200')
-		else:
-			print('Error: ' + str(addDestinationRequest.status_code))
+        if addDestinationRequest.status_code == 200:
+            print('200')
+        else:
+            print('Error: ' + str(addDestinationRequest.status_code))
 
-		return addDestinationRequest.status_code
+        return addDestinationRequest.status_code
 
 newDestination = {
-	"AccountID" : "someMBSaccountID-97f0-4df9-a867-f158ad01220d",
-	"Destination" : "s3bucketName",
-	"DestinationDisplayName" : "Personal Bucket"
+    "AccountID" : "someMBSaccountID-97f0-4df9-a867-f158ad01220d",
+    "Destination" : "s3bucketName",
+    "DestinationDisplayName" : "Personal Bucket"
 }
 
 addDestination("MBSAPItoken", newDestination)
 ```
-
-###  <a id="add-destination-to-account"></a>
 

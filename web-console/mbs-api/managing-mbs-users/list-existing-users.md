@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" required=true %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -48,7 +48,7 @@ Incorrect request URL.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -139,7 +139,7 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 | Name | Description | Type |
 | :--- | :--- | :--- |
@@ -153,17 +153,17 @@ Sample:
 | LicenseManagementMode | User license management mode | UserModeType \(Manual == 0, Automatic == 1\) |
 | SpaceUsed | Used space in Kilobytes | Integer |
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests 
 def listUsers(token):
-		listUsersRequest = requests.get('https://api.mspbackups.com/api/Users',
-										headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
-		print("Status code: " + str(listUsersRequest.status_code) + "\n")
-		print (listUsersRequest.json())
-		
+        listUsersRequest = requests.get('https://api.mspbackups.com/api/Users',
+                                        headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
+        print("Status code: " + str(listUsersRequest.status_code) + "\n")
+        print (listUsersRequest.json())
+
 listUsers("MBSAPItoken")
 ```
 

@@ -66,7 +66,7 @@ Indicates if restore limit is used.
 The package has been successfully modified!
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -74,7 +74,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -83,15 +83,15 @@ No message is returned
 ```javascript
 Sample:
 {
-	"ID" : "44988",
-	"Enabled" : True,
-	"Name" : "100-GB Limit",
-	"Description" : "Royal Limit",
-	"StorageLimit" : 100.0,
-	"isGlacierRestoreLimit" : False,
-	"GlacierRestoreType" : 0,
-	"Cost" : 100.0,
-	"UseRestoreLimit" : True
+    "ID" : "44988",
+    "Enabled" : True,
+    "Name" : "100-GB Limit",
+    "Description" : "Royal Limit",
+    "StorageLimit" : 100.0,
+    "isGlacierRestoreLimit" : False,
+    "GlacierRestoreType" : 0,
+    "Cost" : 100.0,
+    "UseRestoreLimit" : True
 }
 ```
 {% endtab %}
@@ -117,38 +117,36 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def editPackage(token, package):
-		editPackageRequest = requests.put('https://api.mspbackups.com/api/Packages', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = package)
+        editPackageRequest = requests.put('https://api.mspbackups.com/api/Packages', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = package)
 
-		if editPackageRequest.status_code == 200:
-			print("Package has been successfully modified!")
-		else:
-			print("Error :" + str(editPackageRequest.status_code))
-			return editPackageRequest.status_code
-			
+        if editPackageRequest.status_code == 200:
+            print("Package has been successfully modified!")
+        else:
+            print("Error :" + str(editPackageRequest.status_code))
+            return editPackageRequest.status_code
+
 editedPackage = {
-	"ID" : "44988",
-	"Enabled" : True,
-	"Name" : "100-GB Limit",
-	"Description" : "Royal Limit",
-	"StorageLimit" : 100.0,
-	"isGlacierRestoreLimit" : False,
-	"GlacierRestoreType" : 0,
-	"Cost" : 100.0,
-	"UseRestoreLimit" : True
+    "ID" : "44988",
+    "Enabled" : True,
+    "Name" : "100-GB Limit",
+    "Description" : "Royal Limit",
+    "StorageLimit" : 100.0,
+    "isGlacierRestoreLimit" : False,
+    "GlacierRestoreType" : 0,
+    "Cost" : 100.0,
+    "UseRestoreLimit" : True
 }
 
 editPackage(editedPackage)
 ```
-
-
 

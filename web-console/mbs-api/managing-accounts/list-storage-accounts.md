@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The list of accounts has been received
 {% endapi-method-response-example-description %}
 
-```
+```text
 [{'AccountID': 'someID-79a0-4a52-88ed-36da652f4254', 'DateCreated': '2017-01-16T14:34:23.427', 'DisplayName': 'Azure ', 'StorageType': 'AzureVM', 'Destinations': [{'AccountID': 'someID-79a0-4a52-88ed-36da652f4254', 'Destination': 'main', 'DestinationDisplayName': 'Azure '}]}
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ The list of accounts has been received
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -44,9 +44,9 @@ The list of accounts has been received
 | DateCreated | — | Date |
 | DisplayName | — | String |
 | StorageType |  | String |
-| Destinations | List of destinations | Collection  |
+| Destinations | List of destinations | Collection |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -142,21 +142,21 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def getAccounts(token):
-		getAccountsRequest = requests.get('https://api.mspbackups.com/api/Accounts', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
+        getAccountsRequest = requests.get('https://api.mspbackups.com/api/Accounts', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
 
-		if getAccountsRequest.status_code == 200:
-			print('200')
-			return getAccountsRequest.json()
-		else:
-			print("Error: " + str(getAccountsRequest.status_code))
-			return getAccountsRequest.status_code
-			
+        if getAccountsRequest.status_code == 200:
+            print('200')
+            return getAccountsRequest.json()
+        else:
+            print("Error: " + str(getAccountsRequest.status_code))
+            return getAccountsRequest.status_code
+
 getAccounts(MBSAPItoken)
 ```
 

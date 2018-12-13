@@ -31,10 +31,10 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Destinations have been successfully deleted. 
+Destinations have been successfully deleted.
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -42,21 +42,21 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def deleteDestinationForUser(token, destinationID, userID):
-		deleteDestinationForUserRequest = requests.delete('https://api.mspbackups.com/api/Destinations/' + destinationID + '?userId=' + userID, headers = { "Authorization": "Bearer " + token})
+        deleteDestinationForUserRequest = requests.delete('https://api.mspbackups.com/api/Destinations/' + destinationID + '?userId=' + userID, headers = { "Authorization": "Bearer " + token})
 
-		if deleteDestinationForUserRequest.status_code == 200:
-			print("Destinations have been successfully deleted!")
-		else:
-			print('Error! ' + str(deleteDestinationForUserRequest.status_code))
+        if deleteDestinationForUserRequest.status_code == 200:
+            print("Destinations have been successfully deleted!")
+        else:
+            print('Error! ' + str(deleteDestinationForUserRequest.status_code))
 
 deleteDestinationsForUser("MBSAPItoken", "destinationID", "MBSUserID")
 ```

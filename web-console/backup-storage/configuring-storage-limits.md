@@ -4,7 +4,7 @@ Storage limits restrict the volume of data users can store in backup storage. Ap
 
 To create a storage limit, go to _Storage Limits_, under _Storage_. Click **Add New**.
 
-![](../../.gitbook/assets/screenshot-2018-06-20-at-19.04.19.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-20-at-19.04.19.png)
 
 Specify the following details:
 
@@ -14,13 +14,13 @@ Specify the following details:
 4. **Storage Restore limit.** In gigabytes.
 5. **Storage Cost limit**. In US dollars.
 
-![](../../.gitbook/assets/screenshot-2018-06-19-at-19.59.08.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-19-at-19.59.08.png)
 
-Click **Save**. The storage limit has been created and it is now listed along with other storage  limits:
+Click **Save**. The storage limit has been created and it is now listed along with other storage limits:
 
-![](../../.gitbook/assets/screenshot-2018-06-20-at-19.06.52.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-20-at-19.06.52.png)
 
-You can edit and delete storage limits at any time if necessary. 
+You can edit and delete storage limits at any time if necessary.
 
 {% hint style="info" %}
 Storage Limits are not automatically assigned to users by default. They have to be configured individually for every user in the user's settings.

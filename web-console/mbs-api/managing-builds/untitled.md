@@ -34,7 +34,7 @@ Windows = 0, VirtualMachine = 1, MacOS = 2, LinuxDeb = 3, LinuxRpm = 4, DedupSer
 The build has been successfully requested
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -42,7 +42,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -71,22 +71,22 @@ No message is returned
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def requestCustomBuild(token, editionType):
-		getCustomBuildRequest = requests.post('https://api.mspbakcups.com/api/Builds/requestCustomBuilds', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = editionType)
+        getCustomBuildRequest = requests.post('https://api.mspbakcups.com/api/Builds/requestCustomBuilds', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = editionType)
 
-		if getCustomBuildRequest.status_code == 200:
-			print('200')
-		else:
-			return getCustomBuildRequest.status_code
+        if getCustomBuildRequest.status_code == 200:
+            print('200')
+        else:
+            return getCustomBuildRequest.status_code
 
 build = {
-	"Editions" : [0,2,5],
-	"Type" : "0"
+    "Editions" : [0,2,5],
+    "Type" : "0"
 }
 
 requestCustomBuild("MBStoken", build)

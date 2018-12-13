@@ -21,7 +21,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -32,7 +32,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The list of destinations has been successfully retrieved
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'AccountID': 'Sample94bf5b06-79a0-4a52-88ed-36da6wer4', 'AccountDisplayName': 'Azure ', 'Destination': 'main', 'DestinationDisplayName': 'Azure '}
 ```
 {% endapi-method-response-example %}
@@ -40,7 +40,7 @@ The list of destinations has been successfully retrieved
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -49,7 +49,7 @@ The list of destinations has been successfully retrieved
 | Destination | Target bucket | String |
 | DestinationDisplayName | Backup Storage name displayed to the end user | String |
 
-#### Response Format
+## Response Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -97,17 +97,17 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
- 
+
 def listDestinations (token):
-		listDestinationsRequest = requests.get('https://api.mspbackups.com/api/Destinations', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
-		print("List destinations request status code: " + str(listDestinationsRequest.status_code) + "\n")
-		return listDestinationsRequest.json()
-		
+        listDestinationsRequest = requests.get('https://api.mspbackups.com/api/Destinations', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
+        print("List destinations request status code: " + str(listDestinationsRequest.status_code) + "\n")
+        return listDestinationsRequest.json()
+
 listDestinations(token)
 ```
 

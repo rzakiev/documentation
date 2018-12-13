@@ -1,12 +1,12 @@
 # Online Access
 
-### Accessing data online
+## Accessing data online
 
 Managed Backup Service has the Online Access feature. The Online Access functionality offers customers an efficient and secure way to view their backup content and ensure that vital data is properly backed up. It offers the ability to download data hosted in the cloud and share a link to it with other authorized parties.
 
 Having purchased an [Advanced Rebranding](https://order.shareit.com/cart/new?vendorid=200082138&PRODUCT[300577211]=1) license, online access can be configured directly from the owner's domain. Also for enhanced security, an SSL certificate can be installed and used to encrypt the connections in order to ensure that data can be safely accessed from anywhere in the world.
 
-### Setting up online access for users
+## Setting up online access for users
 
 Following is the list of steps required to enable online access:
 
@@ -24,7 +24,7 @@ Following is the list of steps required to enable online access:
 
 **Step 4 \(Advanced\).** Now that you have an [Advanced Rebranding](https://order.shareit.com/cart/new?vendorid=200082138&PRODUCT[300577211]=1) license, proceed to configure an online access with your **own domain**.
 
-To configure the custom domain, point your domain name to 52.6.7.137 IP address and write your domain name \(for example, online.yourcompany.com\) to the **DNS** field. 
+To configure the custom domain, point your domain name to 52.6.7.137 IP address and write your domain name \(for example, online.yourcompany.com\) to the **DNS** field.
 
 Make sure to specify your DNS name into the field:
 
@@ -34,7 +34,7 @@ Make sure to specify your DNS name into the field:
 
 ![](https://mspbackups.com/contents/images/OnlineAccess_Logo.png)
 
-### Enabling SSL certificate \(Advanced\)
+## Enabling SSL certificate \(Advanced\)
 
 In order to protect online sessions from illegal viewing, you can configure secure access to the data using SSL certificate.
 
@@ -48,7 +48,7 @@ Then you need to send the SSL certificate including the private key file \(.pfx\
 
 [**Buy custom domain and SSL certificate hosting for $59.99**](https://secure.shareit.com/shareit/checkout.html?productid=300634267)
 
-### Viewing data online on the client side
+## Viewing data online on the client side
 
 Users can view their backed up data by going to the generated URL and entering their username \(i.e. email\) and password. The provider informs their users what URL they can use for online access.
 

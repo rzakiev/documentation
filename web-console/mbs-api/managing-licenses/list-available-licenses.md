@@ -23,7 +23,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -34,7 +34,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 License have been successfully received!
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'ID': 'license-023a-4555-88db-02f811894b00', 'Number': 6, 'ComputerName': None, 'OperatingSystem': None, 'IsTrial': False, 'IsTaken': False, 'LicenseType': 'Ultimate', 'DateExpired': '2018-02-09T00:00:00', 'Transaction': 'transactionID-f3de-4233-a1cd-ac0e9086015b', 'User': None, 'UserID': None}
 ```
 {% endapi-method-response-example %}
@@ -42,7 +42,7 @@ License have been successfully received!
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -56,27 +56,27 @@ License have been successfully received!
 | DateExpired | License expiration date | Date |
 | Transaction | License transaction | String |
 | User | License user | String |
-| UserID | License userID  | String |
+| UserID | License userID | String |
 
-#### Response Formats
+## Response Formats
 
 * application/json, text/json
 * application/xml, text/xml
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def getLicenses(token, isAvailable):
-		getLicensesRequest = requests.get('https://api.mspbackups.com/api/Licenses?isAvailable=' + str(isAvailable), headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
+        getLicensesRequest = requests.get('https://api.mspbackups.com/api/Licenses?isAvailable=' + str(isAvailable), headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
 
-		if getLicensesRequest.status_code == 200:
-			print("Successful license listing!")
-			return getLicensesRequest.json()
-		else:
-			print("Error: " + str(getLicensesRequest.status_code))
-			getLicensesRequest.status_code
+        if getLicensesRequest.status_code == 200:
+            print("Successful license listing!")
+            return getLicensesRequest.json()
+        else:
+            print("Error: " + str(getLicensesRequest.status_code))
+            getLicensesRequest.status_code
 
 getLicenses("MBSAPItoken", True)
 ```

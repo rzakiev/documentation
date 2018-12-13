@@ -34,7 +34,7 @@ ID of the MBS license you'd like to grant.
 The license has been successfully granted to the user.
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -42,7 +42,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -70,30 +70,30 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def grantLicenseToUser(token, licenseID, userID):
 
-		grantLicenseToUserRequest = requests.post('https://api.mspbackups.com/api/Licenses/Grant', headers = {"Authorization": "Bearer " + token}, json = {"LicenseID" : licenseID, "UserID" : userID})
+        grantLicenseToUserRequest = requests.post('https://api.mspbackups.com/api/Licenses/Grant', headers = {"Authorization": "Bearer " + token}, json = {"LicenseID" : licenseID, "UserID" : userID})
 
-		if grantLicenseToUserRequest.status_code == 200:
-			print("The license has been granted to the user!")
-			try:
-				grantLicenseToUserRequest.json()
-				return 1
-			except:
-				return 0
-		else:
-			print("Error: " + str(grantLicenseToUserRequest.status_code))
-			print(grantLicenseToUserRequest.json())
-			return grantLicenseToUserRequest.status_code
-			
+        if grantLicenseToUserRequest.status_code == 200:
+            print("The license has been granted to the user!")
+            try:
+                grantLicenseToUserRequest.json()
+                return 1
+            except:
+                return 0
+        else:
+            print("Error: " + str(grantLicenseToUserRequest.status_code))
+            print(grantLicenseToUserRequest.json())
+            return grantLicenseToUserRequest.status_code
+
 grantLicenseToUser(MBSAPItoken, licenseID, userID)
 ```
 

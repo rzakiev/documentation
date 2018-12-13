@@ -42,7 +42,7 @@ ID of the MBS user
 The specified destinations have been successfully added to the user.
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -50,7 +50,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Format
+## Request Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -82,29 +82,29 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def addDestinationToUser(token, userEmail, jsonDestinations):
-		addDestinationToUserRequest = requests.post('https://api.mspbackups.com/api/Destinations', headers = { "Authorization": "Bearer " + token}, json = jsonDestinations)
-		
-		if addDestinationToUserRequest.status_code == 200:
-			print("Destinations have been successfully added!")
-		else:
-			print("Error! " + addDestinationToUserRequest.status_code)
-		
-		return addDestinationToUserRequest.status_code
+        addDestinationToUserRequest = requests.post('https://api.mspbackups.com/api/Destinations', headers = { "Authorization": "Bearer " + token}, json = jsonDestinations)
+
+        if addDestinationToUserRequest.status_code == 200:
+            print("Destinations have been successfully added!")
+        else:
+            print("Error! " + addDestinationToUserRequest.status_code)
+
+        return addDestinationToUserRequest.status_code
 
 destinationToAppend = {
-	"UserID" : "e6199730-f98c-4fbd-aa0d-b1b5551f2df3",
-	"AccountID" : "94bf5b06-79a0-4a52-88ed-36da652f4254",
-	"Destination" : "main",
-	"PackageID" : "27755"
+    "UserID" : "e6199730-f98c-4fbd-aa0d-b1b5551f2df3",
+    "AccountID" : "94bf5b06-79a0-4a52-88ed-36da652f4254",
+    "Destination" : "main",
+    "PackageID" : "27755"
 }
 
 addDestinationToUser("MBSAPItoken", "user@company.com", destinationToAppend)

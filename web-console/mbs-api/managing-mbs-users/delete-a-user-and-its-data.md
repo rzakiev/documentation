@@ -6,7 +6,7 @@ Delete User and their Data
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint enables you to delete a user and all of the information related to this user. The user's data will be deleted from the backup storage within 24 hours. 
+This endpoint enables you to delete a user and all of the information related to this user. The user's data will be deleted from the backup storage within 24 hours.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -30,7 +30,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 The user's data has been successfully deleted
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -38,19 +38,19 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests 
 def deleteUserAndData(token, userID):
-		deleteUserRequest = requests.delete('https://api.mspbackups.com/api/Users/' + userID, headers = {"Authorization": "Bearer " + token})
-		print("Delete user status code: " + str(deleteUserRequest.status_code) + "\n")
-		return deleteUserRequest.status_code
-		
+        deleteUserRequest = requests.delete('https://api.mspbackups.com/api/Users/' + userID, headers = {"Authorization": "Bearer " + token})
+        print("Delete user status code: " + str(deleteUserRequest.status_code) + "\n")
+        return deleteUserRequest.status_code
+
 deleteUserAndData("MBSAPItoken", "MBSuserID")
 ```
 

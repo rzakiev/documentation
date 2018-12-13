@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The account has been successfully added.
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Information
+## Request Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -70,14 +70,14 @@ No message is returned
 | Tiscali | 19 |
 | Walrus | 20 |
 
-* Settings __parameters:
+* Settings \_\_parameters:
 
 | Name | Description | Type |
 | :--- | :--- | :--- |
 | AmazonS3 | Parameters required to add an S3 storage | AmazonS3Settings |
 | Azure | Parameters required to add an Azure storage | AzureSettings |
 | OpenStack | Parameters required to add an S3 | OpenStackSettings |
-| Oracle | Parameters required to add an Oracle  | OpenStackCompatible |
+| Oracle | Parameters required to add an Oracle | OpenStackCompatible |
 | S3Compatible | Parameters required to add an S3-compatible storage | S3CompatibleSettings |
 | Cloudian | Parameters required to add a Cloudian account | CloudianSettings |
 
@@ -160,7 +160,7 @@ No message is returned
 | NotCheckCredentials | Used if there's no public access | Bool |
 | SignatureVersion | Signature version | Version2, Version4 |
 
-#### Request Format
+## Request Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -314,36 +314,36 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None if the request has been sent successfully. Otherwise, a JSON is returned containing the error message.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def addAccount(token, accountJSON):
-		addAccountRequest = requests.post('https://api.mspbackups.com/api/Accounts', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = accountJSON)
+        addAccountRequest = requests.post('https://api.mspbackups.com/api/Accounts', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = accountJSON)
 
-		if addAccountRequest.status_code == 200:
-			print('200')
-			return addAccountRequest.json()
-		else:
-			print('Error: ' + str(addAccountRequest.status_code))
-			print(addAccountRequest.json())
-			return addAccountRequest.status_code
-			
+        if addAccountRequest.status_code == 200:
+            print('200')
+            return addAccountRequest.json()
+        else:
+            print('Error: ' + str(addAccountRequest.status_code))
+            print(addAccountRequest.json())
+            return addAccountRequest.status_code
+
 newAccount = {
-	"DisplayName" : "My S3 account",
-	"Type" : 0,
-	"AccountSettings" : {
-		"AmazonS3": {
-			"AccessKey" : "sampleAIXPUW2UXRWQYYBYQ",
-			"SecretKey" : "sampleunLB+sxKPaRsEEfQe8J6Y33huFOWcZ4T",
-			"IsGovCloud" : False
-		}
-	}
+    "DisplayName" : "My S3 account",
+    "Type" : 0,
+    "AccountSettings" : {
+        "AmazonS3": {
+            "AccessKey" : "sampleAIXPUW2UXRWQYYBYQ",
+            "SecretKey" : "sampleunLB+sxKPaRsEEfQe8J6Y33huFOWcZ4T",
+            "IsGovCloud" : False
+        }
+    }
 }
 
 addAccount(newAccounts)

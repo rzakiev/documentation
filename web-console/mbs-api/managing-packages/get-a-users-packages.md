@@ -17,7 +17,7 @@ Specifies the authorization type and token. Value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The packages have been successfully listed
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'ID': someID, 'Cost': 30.0, 'Description': '20-gigabyte limit for new employees.', 'Enabled': True, 'Name': '20-GB Limit', 'StorageLimit': 20.0, 'isGlacierRestoreLimit': False, 'RestoreLimit': -1.0, 'GlacierRestoreType': 0, 'UseRestoreLimit': False}
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ The packages have been successfully listed
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -51,7 +51,7 @@ The packages have been successfully listed
 | GlacierRestoreType | Glacier Restore Type | Standard = 0, Bulk = 1, Expedited = 2, No = 3 |
 | UserRestoreLimit | Indicates if restore limit is used | Boolean |
 
-#### Response Formatsa
+## Response Formatsa
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -123,18 +123,18 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def getUsersPackages(token, userID):
-		listPackageStructureRequest = requests.get('https://api.mspbackups.com/api/Packages/' + userID, headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
-		try:
-			return listPackageStructureRequest.json()
-		except:
-			return listPackageStructureRequest.status_code
-			
+        listPackageStructureRequest = requests.get('https://api.mspbackups.com/api/Packages/' + userID, headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
+        try:
+            return listPackageStructureRequest.json()
+        except:
+            return listPackageStructureRequest.status_code
+
 charliesPackages = getUsersPackages("MBSAPItoken", "Charlie's ID")
 ```
 

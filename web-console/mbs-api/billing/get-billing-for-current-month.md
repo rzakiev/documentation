@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The billing information for the current month has been successfully received.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'CurrentSpaceUsed': 77060622, 'AverageSpaceUsed': 71852916, 'TotalRestore': 0, 'StatisticBilling': [{'UserId': 'sample-7567-4965-8c8a-bee5bf6b056d', 'Email': 'user', 'FirstName': 'John', 'LastName': 'Techhead', 'CompanyName': None, 'AverageSpace': 0, 'TotalVolumeRestore': 0, 'PlanCost': 1.0, 'StorageCost': 0.0, 'RestoreCost': 0.0, 'TotalCost': 1.0, 'LicensesUsed': 0},
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ The billing information for the current month has been successfully received.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -62,7 +62,7 @@ The billing information for the current month has been successfully received.
 | TotalCost | Total Cost | Decimal |
 | LicensesUsed | Number of licenses use by the user | Integer |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -152,19 +152,19 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def billingDetailsForCurrentMonth(token):
-		billingDetailsForCurrentMonthRequest = requests.get('https://api.mspbackups.com/api/Billing', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
+        billingDetailsForCurrentMonthRequest = requests.get('https://api.mspbackups.com/api/Billing', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
 
-		if billingDetailsForCurrentMonthRequest.status_code == 200:
-			print('200')
-			return billingDetailsForCurrentMonthRequest.json()
-		else:
-			return billingDetailsForCurrentMonthRequest.status_code
+        if billingDetailsForCurrentMonthRequest.status_code == 200:
+            print('200')
+            return billingDetailsForCurrentMonthRequest.json()
+        else:
+            return billingDetailsForCurrentMonthRequest.status_code
 
 billingDetailsForCurrentMonth(MBSAPItoken)
 ```

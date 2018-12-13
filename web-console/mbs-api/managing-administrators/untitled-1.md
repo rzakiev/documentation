@@ -24,7 +24,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 The administrator's information has been successfully modified
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -32,7 +32,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Information
+## Request Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -72,7 +72,7 @@ No message is returned
 | GoogleApps | Google Apps management permission | Forbidden = 0, Permitted = 1 |
 | Dashboard | Dashboard access | Forbidden = 0, Permitted = 1 |
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -81,35 +81,35 @@ No message is returned
 ```javascript
 Sample:
 newAdmin = {
-	"AdminID" : "someID",
-	"Password" : "truepass",
-	"FirstName" : "Robert",
-	"LastName" : "QA",
-	"Enabled" : "true",
-	"PermissionsModels": {
-		"Users": 1,
-		"StorageLimit": 1,
-		"Notification": 0,
-		"OnlineAccess": 1,
-		"Licenses": 1,
-		"Billing":1,
-		"Monitiring":1,
-		"RemoteDeploy":1,
-		"RemoteManagment":1,
-		"HelpMarketing":1,
-		"AuditLog":1,
-		"PSA":1,
-		"Administrators":1,
-		"Rebranding":1,
-		"Storage":1,
-		"ADS":1,
-		"LicenseBuy":1,
-		"LicenseActivate":1,
-		"StorageUsage":1,
-		"CapacityReport":1,
-		"GoogleApps":1,
-		"Dashboard":1
-	}
+    "AdminID" : "someID",
+    "Password" : "truepass",
+    "FirstName" : "Robert",
+    "LastName" : "QA",
+    "Enabled" : "true",
+    "PermissionsModels": {
+        "Users": 1,
+        "StorageLimit": 1,
+        "Notification": 0,
+        "OnlineAccess": 1,
+        "Licenses": 1,
+        "Billing":1,
+        "Monitiring":1,
+        "RemoteDeploy":1,
+        "RemoteManagment":1,
+        "HelpMarketing":1,
+        "AuditLog":1,
+        "PSA":1,
+        "Administrators":1,
+        "Rebranding":1,
+        "Storage":1,
+        "ADS":1,
+        "LicenseBuy":1,
+        "LicenseActivate":1,
+        "StorageUsage":1,
+        "CapacityReport":1,
+        "GoogleApps":1,
+        "Dashboard":1
+    }
 }
 ```
 {% endtab %}
@@ -159,49 +159,49 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def updateAdministrator(token, updatedAdmin):
-		updateAdministratorRequest = requests.put('https://api.mspbackups.com/api/Administrators/', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = updatedAdmin)
+        updateAdministratorRequest = requests.put('https://api.mspbackups.com/api/Administrators/', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = updatedAdmin)
 
-		if updateAdministratorRequest.status_code == 200:
-			print('200')
-		else: 
-			return updateAdministratorRequest.status_code
-			
+        if updateAdministratorRequest.status_code == 200:
+            print('200')
+        else: 
+            return updateAdministratorRequest.status_code
+
 updatedAdmin = {
-	"AdminID" : "sample-ca1e-4bfb-9250-e0f4ffbc8fe1",
-	"Password" : "somepass",
-	"FirstName" : "Robert",
-	"LastName" : "QA",
-	"Enabled" : "true",
-	"PermissionsModels": {
-		"Users": 1,
-		"StorageLimit": 1,
-		"Notification": 0,
-		"OnlineAccess": 1,
-		"Licenses": 1,
-		"Billing":1,
-		"Monitiring":1,
-		"RemoteDeploy":1,
-		"RemoteManagment":1,
-		"HelpMarketing":1,
-		"AuditLog":1,
-		"PSA":1,
-		"Administrators":1,
-		"Rebranding":1,
-		"Storage":1,
-		"ADS":1,
-		"LicenseBuy":1,
-		"LicenseActivate":1,
-		"StorageUsage":1,
-		"CapacityReport":1,
-		"GoogleApps":1,
-		"Dashboard":1
-	}
+    "AdminID" : "sample-ca1e-4bfb-9250-e0f4ffbc8fe1",
+    "Password" : "somepass",
+    "FirstName" : "Robert",
+    "LastName" : "QA",
+    "Enabled" : "true",
+    "PermissionsModels": {
+        "Users": 1,
+        "StorageLimit": 1,
+        "Notification": 0,
+        "OnlineAccess": 1,
+        "Licenses": 1,
+        "Billing":1,
+        "Monitiring":1,
+        "RemoteDeploy":1,
+        "RemoteManagment":1,
+        "HelpMarketing":1,
+        "AuditLog":1,
+        "PSA":1,
+        "Administrators":1,
+        "Rebranding":1,
+        "Storage":1,
+        "ADS":1,
+        "LicenseBuy":1,
+        "LicenseActivate":1,
+        "StorageUsage":1,
+        "CapacityReport":1,
+        "GoogleApps":1,
+        "Dashboard":1
+    }
 }
 
 updateAdministrator(MBSAPItoken, updatedAdmin)

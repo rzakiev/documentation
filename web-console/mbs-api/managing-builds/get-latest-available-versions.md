@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The latest versions have been successfully listed
 {% endapi-method-response-example-description %}
 
-```
+```text
 [{'Type': 0, 'Version': '5.9.0.274'}, {'Type': 1, 'Version': '5.9.0.274'}, {'Type': 2, 'Version': '2.4.3.11'}, {'Type': 3, 'Version': '2.4.3.11'}, {'Type': 4, 'Version': '2.4.3.11'}, {'Type': 5, 'Version': '2.3.1.42'}]
 ```
 {% endapi-method-response-example %}
@@ -36,14 +36,14 @@ The latest versions have been successfully listed
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
 | Type | Build type | Windows = 0, VirtualMachine = 1, MacOS = 2, LinuxDeb = 3, LinuxRpm = 4, DedupServer = 5 |
 | Version | Build version | String |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -77,22 +77,20 @@ The latest versions have been successfully listed
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def getLatestVersions(token):
-		getLatestVersions = requests.get('https://api.mspbackups.com/api/Builds/AvailableVersions', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
+        getLatestVersions = requests.get('https://api.mspbackups.com/api/Builds/AvailableVersions', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
 
-		if getLatestVersions.status_code == 200:
-			print('200')
-			return getLatestVersions.json()
-		else: 
-			return getLatestVersions.status_code
-			
+        if getLatestVersions.status_code == 200:
+            print('200')
+            return getLatestVersions.json()
+        else: 
+            return getLatestVersions.status_code
+
 getLatestVersions("MBStoken")
 ```
-
-
 

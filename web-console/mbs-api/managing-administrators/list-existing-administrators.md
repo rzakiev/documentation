@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The list of administrators has been successfully received
 {% endapi-method-response-example-description %}
 
-```
+```text
 [{'AdminID': 'sample-1656-40b4-bc64-f4299a8303fc', 'Email': 'testuser', 'FirstName': 'Main', 'LastName': 'Administrator', 'Enabled': True, 'PermissionsModels': {'Users': 1, 'StorageLimit': 0, 'Notification': 1, 'OnlineAccess': 0, 'Licenses': 1, 'Billing': 1, 'Monitiring': 0, 'RemoteDeploy': 0, 'RemoteManagment': 0, 'HelpMarketing': 0, 'AuditLog': 0, 'PSA': 0, 'Administrators': 0, 'Rebranding': 0, 'Storage': 0, 'ADS': 0, 'LicenseBuy': 0, 'LicenseActivate': 0, 'StorageUsage': 1, 'CapacityReport': 1, 'GoogleApps': 0, 'Dashboard': 0}, 'LastLogin': None, 'DateCreated': '2018-05-15T15:44:51.07', 'Companies': []}]
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ The list of administrators has been successfully received
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -77,7 +77,7 @@ The list of administrators has been successfully received
 | GoogleApps | Google Apps management permission | Forbidden = 0, Permitted = 1 |
 | Dashboard | Dashboard access | Forbidden = 0, Permitted = 1 |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -247,19 +247,19 @@ The list of administrators has been successfully received
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def listAdministrators(token):
-		listAdministratorsRequest = requests.get('https://api.mspbackups.com/api/Administrators', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
-		if listAdministratorsRequest.status_code == 200:
-			print('200')
-			return listAdministratorsRequest.json()
-		else:
-			return listAdministratorsRequest.status_code
-			
+        listAdministratorsRequest = requests.get('https://api.mspbackups.com/api/Administrators', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
+        if listAdministratorsRequest.status_code == 200:
+            print('200')
+            return listAdministratorsRequest.json()
+        else:
+            return listAdministratorsRequest.status_code
+
 listAdministrators("MBSAPItoken")
 ```
 

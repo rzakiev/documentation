@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 This list of existing packages has been successfully received.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'ID': 20988, 'Cost': 0.0, 'Description': "10-gig limit", 'Enabled': True, 'Name': '10 gigs', 'StorageLimit': 10.0, 'isGlacierRestoreLimit': False, 'RestoreLimit': -1.0, 'GlacierRestoreType': 0, 'UseRestoreLimit': True}
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ This list of existing packages has been successfully received.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -51,7 +51,7 @@ This list of existing packages has been successfully received.
 | GlacierRestoreType | Glacier Restore Type | Standard = 0, Bulk = 1, Expedited = 2, No = 3 |
 | UserRestoreLimit | Indicates if restore limit is used | Boolean |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -123,20 +123,20 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def listPackages(token):
-		listPackagesRequest = requests.get('https://api.mspbackups.com/api/Packages', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
+        listPackagesRequest = requests.get('https://api.mspbackups.com/api/Packages', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
 
-		if listPackagesRequest.status_code == 200:
-			print("Success!")
-		else:
-			print("Error: " + str(listPackagesRequest.status_code))
+        if listPackagesRequest.status_code == 200:
+            print("Success!")
+        else:
+            print("Error: " + str(listPackagesRequest.status_code))
 
-		return listPackagesRequest.json()
+        return listPackagesRequest.json()
 listPackages("MBSAPItoken")
 ```
 

@@ -6,7 +6,7 @@ Delete User Data in Backup Storage
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint enables you to delete a user's data in the backup storage. Use this request if you don't want to delete the user from MBS or if you've already deleted them. The data will be purged from the backup storage within 24 hours. 
+This endpoint enables you to delete a user's data in the backup storage. Use this request if you don't want to delete the user from MBS or if you've already deleted them. The data will be purged from the backup storage within 24 hours.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -40,7 +40,7 @@ Destination ID
 The user's data has been successfully deleted.
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -48,7 +48,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Format
+## Request Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -70,23 +70,23 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests 
 
 def deleteUsersData (token, userID, json):
-		deleteUsersDataRequest = requests.delete('https://api.mspbackups.com/api/Users/' + userID + '/Computers', headers = {"Authorization": "Bearer " + token}, json = json)
-		print ("Delete user's data request status code: " + str(deleteUsersDataRequest.status_code) + "\n")
-		return deleteUsersDataRequest.status_code
+        deleteUsersDataRequest = requests.delete('https://api.mspbackups.com/api/Users/' + userID + '/Computers', headers = {"Authorization": "Bearer " + token}, json = json)
+        print ("Delete user's data request status code: " + str(deleteUsersDataRequest.status_code) + "\n")
+        return deleteUsersDataRequest.status_code
 
 usersInfo = {
-		"DestinationId" : "someID"
-		"ComputerName" : "MBSuserComputerName"
+        "DestinationId" : "someID"
+        "ComputerName" : "MBSuserComputerName"
 }
 deletedUsersData("MBSAPItoken", "MBSuserID", usersInfo)
 ```

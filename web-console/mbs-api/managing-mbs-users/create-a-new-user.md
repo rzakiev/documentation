@@ -13,11 +13,11 @@ This endpoint enables you to to create a new MBS user.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" type="string" required=true %}
-Specifies the authorization type and token. Value: "Bearer  MBSAPItoken"
+Specifies the authorization type and token. Value: "Bearer MBSAPItoken"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the authorization type and token. Value: "Bearer  MBSAPItoken"
 The user has been successfully created!
 {% endapi-method-response-example-description %}
 
-```
+```text
 "userID"
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ The user has been successfully created!
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Format
+## Request Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -58,30 +58,30 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Formats
+## Response Formats
 
 * application/json, text/json
 * application/xml, text/xml
 
 Response represents the ID of the new user.
 
-#### Sample Python Code:
+## Sample Python Code:
 
 ```python
 import requests
 def createUser(token, newUserJson):
-		createUserRequest = requests.post('https://api.mspbackups.com/api/Users', json = newUserJson, headers = {"Accept" : "application/json", "Authorization": "Bearer " + token})
-		print ("Create user request status code: " + str(createUserRequest.status_code) + "\n")
+        createUserRequest = requests.post('https://api.mspbackups.com/api/Users', json = newUserJson, headers = {"Accept" : "application/json", "Authorization": "Bearer " + token})
+        print ("Create user request status code: " + str(createUserRequest.status_code) + "\n")
 
-		if createUserRequest.status_code != 200:
-			print("ERROR!")
+        if createUserRequest.status_code != 200:
+            print("ERROR!")
 
-		print(createUserRequest.json())
+        print(createUserRequest.json())
 
 newUser = {
- 	"Email" : "roberttech1", #required
- 	"Password" : "splendidpass", #required
- 	"Enabled" : True #required
+     "Email" : "roberttech1", #required
+     "Password" : "splendidpass", #required
+     "Enabled" : True #required
 }
 
 createUser("mbsAPItoken", newUser)

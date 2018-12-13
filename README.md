@@ -4,11 +4,11 @@ description: This page introduces you to Managed Backup Service API
 
 # Managed Backup Service
 
-### Introduction
+## Introduction
 
 Managed Backup Service \(MBS\) is a cross-platform, cost-effective, flexible, and versatile backup and recovery solution that enables businesses to perform reliable backup with centralized management and monitoring. MBS is aimed at enterprises of all sizes as it offers scalable management and monitoring of backups on all corporate computers as well as billing control and license management from one central web-based location.
 
-### Backup Editions Comparison
+## Backup Editions Comparison
 
 | License Type / Supported Features | File-level | Image-based | MS SQL Server | MS Exchange | SQL + Exchange | Virtual Machine | Ultimate |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -31,7 +31,7 @@ Managed Backup Service \(MBS\) is a cross-platform, cost-effective, flexible, an
 | Maximum Local backup size | Unlimited | Unlimited | Unlimited | Unlimited | Unlimited | Unlimited | Unlimited |
 | Price | $49.99/y | $59.99/y | $69.99/y | $79.99/y | $109.99/y | $149.99/y | $149.99/y |
 
-### Getting Started with MBS
+## Getting Started with MBS
 
 MBS Web Console enables providers to interact with the service's backend via a special API. This API offers you a diverse set of requests that you can incorporate into your automation workflow or various remote management solutions like ConnectWise.
 

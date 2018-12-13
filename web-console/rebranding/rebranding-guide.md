@@ -4,9 +4,9 @@ description: Learn how to rebrand your backup software with MSP Backups
 
 # Rebranding Guide
 
-### Introduction
+## Introduction
 
-MSP Backups offers full-fledged desktop client rebranding and customization both for Windows & macOS/Linux\). This allows you to provide an easy-to-use and efficient cloud backup solution under your own brand. 
+MSP Backups offers full-fledged desktop client rebranding and customization both for Windows & macOS/Linux\). This allows you to provide an easy-to-use and efficient cloud backup solution under your own brand.
 
 Our Managed Backup service has multiple customization features that can make Managed Backup client look fully aligned with your brand.
 
@@ -23,30 +23,30 @@ Advanced rebranding is only available for customers who have purchased an [Advan
 
 Rebranding is available in the MSP Backups Web Console, under _Downloads_.
 
-![](../../.gitbook/assets/screenshot-2018-06-27-at-20.09.25.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-27-at-20.09.25.png)
+
+## Installer left panel image
 
 ### Installer left panel image
-
-#### Installer left panel image
 
 Left panel image for installer Size: **164 x 314**  
 Type: **BMP**
 
 Max file size: 500KB
 
-![](../../.gitbook/assets/screenshot-2018-06-27-at-18.26.40.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-27-at-18.26.40.png)
 
-#### Left image for Wizards
+### Left image for Wizards
 
-Backup and Restore Wizards   
+Backup and Restore Wizards  
 Size: **178 x 475**  
 Type: **PNG**
 
 Max file size: 500KB
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/image%20%288%29.png)
 
-#### Banner image for Wizards
+### Banner image for Wizards
 
 Required size: 141 x 72;
 
@@ -54,25 +54,25 @@ Required format: **PNG;**
 
 Maximum file size: 500 Kb
 
-![](../../.gitbook/assets/image%20%2851%29.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/image%20%2851%29.png)
 
-### Icons
+## Icons
 
-#### Tray icon
+### Tray icon
 
-Tray icon is displayed in the tray when the app is minimized. 
+Tray icon is displayed in the tray when the app is minimized.
 
 * Required size: 16 x 16;
 * Required format: **ICO**;
 * Maximum file size: 500 KB.
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/image%20%2821%29.png)
 
 {% hint style="info" %}
-To prepare this icon, you need to first have the initial PNG \(or other image format\) file of sizes 16x16, 32x32, 64x64 and then convert them into icon using a special program \(e.g. http://www.free-icon-editor.com/\).
+To prepare this icon, you need to first have the initial PNG \(or other image format\) file of sizes 16x16, 32x32, 64x64 and then convert them into icon using a special program \(e.g. [http://www.free-icon-editor.com/\](http://www.free-icon-editor.com/\)\).
 {% endhint %}
 
-#### Product icon
+### Product icon
 
 Product icon is displayed next to the window title and have to be provided in the following sizes:
 
@@ -88,32 +88,30 @@ Ensure that you have both XP and 256-bit colors for each size.
 * Color depth: 8-bit, 16-bit, 32-bit;
 * Maximum file size: 500 KB.
 
-![](../../.gitbook/assets/screenshot-2018-06-26-at-19.13.46.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-26-at-19.13.46.png)
 
-#### 
-
-#### Available update notification icon
+### Available update notification icon
 
 This icon is displayed next to the the product version and indicates that an update is available.
 
 * Required size: 16 x 16;
 * Required format: GIF \(animated\).
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/image%20%2826%29.png)
 
-### Dialogs
+## Dialogs
 
-#### Top dialog banner
+### Top dialog banner
 
 Displayed on the following windows: Feedback, Trial Expired, Register Product, About, Check for update, New Version is available.  
 Required size: 413 x 77.  
-****Required format: PNG.
+_\*\*_Required format: PNG.
 
 Maximum file size: 500KB
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/image%20%289%29.png)
 
-### Splash screen
+## Splash screen
 
 This image is displayed on startup.
 
@@ -121,22 +119,22 @@ This image is displayed on startup.
 * Required format: PNG;
 * Maximum file size: 500 KB.
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/image%20%287%29.png)
 
 {% hint style="info" %}
- The area marked by red square should be reserved for product information such as build number, license, etc. The bottom panel is reserved for the text "Loading..." that is displayed on startup.
+The area marked by red square should be reserved for product information such as build number, license, etc. The bottom panel is reserved for the text "Loading..." that is displayed on startup.
 {% endhint %}
 
-### Texts
+## Texts
 
 You can rebrand the following texts in the desktop clients of MSP Backups:
 
 * Web Site;
 * Copyright Text;
 
-![](../../.gitbook/assets/screenshot-2018-06-27-at-19.19.13.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-27-at-19.19.13.png)
 
-### Options
+## Options
 
 MSP Backups enables you to to determine which options of the software will be available for end users:
 
@@ -165,9 +163,5 @@ MSP Backups enables you to to determine which options of the software will be av
 * Ability to enable users to sign up for MSP Backups within the software;
 * Ability to enable _Remote Access_ to the users' computer.
 
-![](../../.gitbook/assets/screenshot-2018-06-27-at-20.04.06.png)
-
- 
-
-
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/screenshot-2018-06-27-at-20.04.06.png)
 

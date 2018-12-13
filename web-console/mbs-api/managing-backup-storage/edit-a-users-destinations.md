@@ -13,11 +13,11 @@ This endpoint enables you to edit a user's destination.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" required=true type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -50,7 +50,7 @@ ID of the destination
 The user's destinations has been successfully modified
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -58,26 +58,26 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def editDestination(token, jsonNewDestination):
-		editDestinationRequest = requests.put('https://api.mspbackups.com/api/Destinations', headers = { "Authorization": "Bearer " + token}, json = jsonNewDestination)
+        editDestinationRequest = requests.put('https://api.mspbackups.com/api/Destinations', headers = { "Authorization": "Bearer " + token}, json = jsonNewDestination)
 
-		if editDestinationRequest.status_code == 200:
-			print("Destination has been successfully modified!")
-		else:
-			print("Error! " + str(editDestinationRequest.status_code))
-			return editDestinationRequest.json()
+        if editDestinationRequest.status_code == 200:
+            print("Destination has been successfully modified!")
+        else:
+            print("Error! " + str(editDestinationRequest.status_code))
+            return editDestinationRequest.json()
 
 modifiedDestination = {
-	"ID" : "Destination ID. Cannot be modified.",
-	"UserID" : "MBS user ID. Cannot be modified",
-	"AccountID" : "94bf5b06-79a0-4a52-88ed-3sample",
-	"Destination" : "main", #can be modified
-	"PackageID" : "27755" # can be modified
-}			
+    "ID" : "Destination ID. Cannot be modified.",
+    "UserID" : "MBS user ID. Cannot be modified",
+    "AccountID" : "94bf5b06-79a0-4a52-88ed-3sample",
+    "Destination" : "main", #can be modified
+    "PackageID" : "27755" # can be modified
+}            
 
 editDestination("MBSAPItoken", modifiedDestination)
 ```

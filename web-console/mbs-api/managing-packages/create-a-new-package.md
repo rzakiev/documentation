@@ -58,7 +58,7 @@ Indicates if restore limit is used.
 The package has been successfully created!
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -66,7 +66,7 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-####  Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -75,13 +75,13 @@ No message is returned
 ```javascript
 Sample:
 {
-	"Name" : "30-GB Limit",
-	"Description" : "30-gigabyte limit for new employees.",
-	"StorageLimit" : 30.0,
-	"isGlacierRestoreLimit" : False,
-	"GlacierRestoreType" : 0,
-	"Cost" : 40.0,
-	"UseRestoreLimit" : True
+    "Name" : "30-GB Limit",
+    "Description" : "30-gigabyte limit for new employees.",
+    "StorageLimit" : 30.0,
+    "isGlacierRestoreLimit" : False,
+    "GlacierRestoreType" : 0,
+    "Cost" : 40.0,
+    "UseRestoreLimit" : True
 }
 ```
 {% endtab %}
@@ -105,32 +105,32 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 
 def createNewPackage(token, package):
-		createNewPackageRequest = requests.post('https://api.mspbackups.com/api/Packages', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = package)
-		if createNewPackageRequest.status_code == 200:
-			print ("Create new package: success!")
-		else:
-			print("Error: " + str(createNewPackageRequest.status_code))
-			return createNewPackageRequest.status_code
+        createNewPackageRequest = requests.post('https://api.mspbackups.com/api/Packages', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = package)
+        if createNewPackageRequest.status_code == 200:
+            print ("Create new package: success!")
+        else:
+            print("Error: " + str(createNewPackageRequest.status_code))
+            return createNewPackageRequest.status_code
 
 newPackage = {
-	"Name" : "30-GB Limit",
-	"Description" : "30-gigabyte limit for new employees.",
-	"StorageLimit" : 30.0,
-	"isGlacierRestoreLimit" : False,
-	"GlacierRestoreType" : 0,
-	"Cost" : 40.0,
-	"UseRestoreLimit" : True
+    "Name" : "30-GB Limit",
+    "Description" : "30-gigabyte limit for new employees.",
+    "StorageLimit" : 30.0,
+    "isGlacierRestoreLimit" : False,
+    "GlacierRestoreType" : 0,
+    "Cost" : 40.0,
+    "UseRestoreLimit" : True
 }
 
 createNewPackage ("MBSAPItoken", newPackage)

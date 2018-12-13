@@ -30,7 +30,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 The administrator has been successfully deleted
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -38,23 +38,23 @@ No message is returned
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def deleteAdministrator(token, adminID):
-		deleteAdministratorRequest = requests.delete('https://api.mspbackups.com/api/Administrators/' + adminID, headers = {"Authorization": "Bearer " + token})
+        deleteAdministratorRequest = requests.delete('https://api.mspbackups.com/api/Administrators/' + adminID, headers = {"Authorization": "Bearer " + token})
 
-		if deleteAdministratorRequest.status_code == 200:
-			print('200')
-			return deleteAdministratorRequest.json()
-		else:
-			return deleteAdministratorRequest.status_code
-			
+        if deleteAdministratorRequest.status_code == 200:
+            print('200')
+            return deleteAdministratorRequest.json()
+        else:
+            return deleteAdministratorRequest.status_code
+
 deleteAdministrator(MBSAPItoken)
 ```
 

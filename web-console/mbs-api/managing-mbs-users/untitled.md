@@ -23,7 +23,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter type="string" name="Accept" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -34,7 +34,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The user's information has been successfully received
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'ID': 'someID', 'Email': 'someEmail', 'FirstName': '', 'LastName': '', 'NotificationEmails': [], 'Company': '', 'Enabled': True, 'LicenseManagmentMode': 1, 'DestinationList': [], 'SpaceUsed': 0}
 ```
 {% endapi-method-response-example %}
@@ -42,7 +42,7 @@ The user's information has been successfully received
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -64,16 +64,16 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code:
+## Sample Python Code:
 
 ```python
 import requests
 def getUserByID(token, ID):
-		getUserByIDRequest = requests.get('https://api.mspbackups.com/api/Users/' + ID, headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
-		print("Get User by ID status code: " + str(getUserByIDRequest.status_code) + "\n")
-		print(getUserByIDRequest.json())
-		
+        getUserByIDRequest = requests.get('https://api.mspbackups.com/api/Users/' + ID, headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
+        print("Get User by ID status code: " + str(getUserByIDRequest.status_code) + "\n")
+        print(getUserByIDRequest.json())
+
 getUserByID ("MBSAPItoken", "MBSuserID")
 ```
 

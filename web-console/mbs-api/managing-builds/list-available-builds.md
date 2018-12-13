@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -28,7 +28,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The builds have been successfully listed
 {% endapi-method-response-example-description %}
 
-```
+```text
 [{'Type': 'Windows', 'Version': '5.8.6.28', 'DownloadLink': 'http://s3.amazonaws.com/cb_setups/MBS/B91F2C34-88AD-43C0-8648/CBLCompanyonlinebackup_v5.8.6.28_netv4.0_ALLEDITIONS_Setup_20180503154124.exe'}, {'Type': 'macOS', 'Version': '2.4.0.17', 'DownloadLink': 'http://s3.amazonaws.com/cb_setups/MBS/B91F2C34-88AD-43C0-8648/mac_CBLCompany_onlinebackup_v2.4.0.17_20180503154137.pkg'}]
 ```
 {% endapi-method-response-example %}
@@ -36,7 +36,7 @@ The builds have been successfully listed
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -44,7 +44,7 @@ The builds have been successfully listed
 | Version | Build version | String |
 | DownloadLink | Download link | String |
 
-#### Response Information
+## Response Information
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -88,19 +88,19 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def getBuilds(token):
-		getBuildsRequest = requests.get('https://api.mspbackups.com/api/Builds', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
+        getBuildsRequest = requests.get('https://api.mspbackups.com/api/Builds', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
 
-		if getBuildsRequest.status_code == 200:
-			print('200')
-			return getBuildsRequest.json()
-		else:
-			return getBuildsRequest.status_code
+        if getBuildsRequest.status_code == 200:
+            print('200')
+            return getBuildsRequest.json()
+        else:
+            return getBuildsRequest.status_code
 
 getBuilds("MBSAPItoken")
 ```

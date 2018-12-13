@@ -6,13 +6,13 @@ description: >-
 
 # MBS API Python Library
 
-### Introduction
+## Introduction
 
 In the previous articles we covered the ins and outs of each MBS API request. But just to make things simpler, we've created a Python library that provides methods for each API request available. This library will enable you to send MBS API requests with just a single line of code and should facilitate automation of MBS functionality.
 
 The library can be downloaded [here](https://documentationrobert.s3.amazonaws.com/MBSAPIrequests.py).
 
-### Setup & Initial Authentication
+## Setup & Initial Authentication
 
 ```python
 from MBSAPI import *
@@ -21,7 +21,7 @@ from MBSAPI import *
 mbsAPIinstance = MBSRequester(username = 'MBSAPIlogin', password = 'MBSAPIpassword') #these credentials can be generated in MBS Web Console, in settings.
 ```
 
-### Managing Users
+## Managing Users
 
 ```python
 #List existing users
@@ -30,8 +30,8 @@ jsonUsers = mbsAPIinstance.listUsers()
 #Create a new user
 newUser = {
     "Email" : "roberttech3", #required
-	"Password" : "splendidpass", #required
-	"Enabled" : True #required
+    "Password" : "splendidpass", #required
+    "Enabled" : True #required
 }
 mbsAPIinstance.createNewUser(newUser)
 
@@ -43,9 +43,9 @@ userInfoJSON = mbsAPIinstance.getUserByLoginPassword("roberttech3", "splendidpas
 
 #Update user's info
 updatedUser = {
-	"ID" : "9d6de082-741c-44fe-b067-1a36eb03fa40", #required
-	"Password" : "newUnhackablePass", #required
-	"Enabled" : False #required
+    "ID" : "9d6de082-741c-44fe-b067-1a36eb03fa40", #required
+    "Password" : "newUnhackablePass", #required
+    "Enabled" : False #required
 }
 mbsAPIinstance.updateUserInfo(updatedUser)
 
@@ -66,7 +66,7 @@ data = {
 mbsAPIinstance.deleteUsersData("MBSUserID", data)
 ```
 
-### Managing Accounts \(Backup Storage\)
+## Managing Accounts \(Backup Storage\)
 
 ```python
 #List existing storage accounts
@@ -77,51 +77,51 @@ accountInfoJSON = mbsAPIinstance.getAccountInfo('accountID')
 
 #Add a new account
 newAccount = {
-	"DisplayName" : "My S3 account NEW",
-	"Type" : 0,
-	"AccountSettings" : {
-		"AmazonS3": {
-			"AccessKey" : "someKeyXPUW2UXRWQYYBYQ",
-			"SecretKey" : "someKeyed4kunLB+sxKPaRsEEfQe8J6Y33huFOWcZ4T",
-			"IsGovCloud" : False
-		}
-	}
+    "DisplayName" : "My S3 account NEW",
+    "Type" : 0,
+    "AccountSettings" : {
+        "AmazonS3": {
+            "AccessKey" : "someKeyXPUW2UXRWQYYBYQ",
+            "SecretKey" : "someKeyed4kunLB+sxKPaRsEEfQe8J6Y33huFOWcZ4T",
+            "IsGovCloud" : False
+        }
+    }
 }
 mbsAPIinstance.addAccount(newAccount)
 
 #Edit an existing account
 editedAccount = {
-	"AccountID" : "MBSAccountID-97f0-4df9-a867-f158ad01220d",
-	"DisplayName" : "My S3 account NEW",
-	"Type" : 0,
-	"AccountSettings" : {
-		"AmazonS3": {
-			"AccessKey" : "someKeyPUW2UXRWQYYBYQ",
-			"SecretKey" : "someKeywed4kunLB+sxKPaRsEEfQe8J6Y33huFOWcZ4T",
-			"IsGovCloud" : False
-		}
-	}
+    "AccountID" : "MBSAccountID-97f0-4df9-a867-f158ad01220d",
+    "DisplayName" : "My S3 account NEW",
+    "Type" : 0,
+    "AccountSettings" : {
+        "AmazonS3": {
+            "AccessKey" : "someKeyPUW2UXRWQYYBYQ",
+            "SecretKey" : "someKeywed4kunLB+sxKPaRsEEfQe8J6Y33huFOWcZ4T",
+            "IsGovCloud" : False
+        }
+    }
 }
 mbsAPIinstance.editAccount(editedAccount)
 
 #Add destination to an account
 newDestination = {
-	"AccountID" : "someID-97f0-4df9-a867-f158ad01220d",
-	"Destination" : "s3Bucket",
-	"DestinationDisplayName" : "Container for PowerPoints"
+    "AccountID" : "someID-97f0-4df9-a867-f158ad01220d",
+    "Destination" : "s3Bucket",
+    "DestinationDisplayName" : "Container for PowerPoints"
 }
 mbsAPIinstance.addDestination(newDestination)
 
 #Remove a destination from an account
 obsoleteDestination = {
-	"AccountID" : "someID-97f0-4df9-a867-f158ad01220d",
-	"Destination" : "s3Bucket",
-	"DestinationDisplayName" : "Container for PowerPoints"
+    "AccountID" : "someID-97f0-4df9-a867-f158ad01220d",
+    "Destination" : "s3Bucket",
+    "DestinationDisplayName" : "Container for PowerPoints"
 }
 mbsAPIinstance.removeDestination(obsoleteDestination)
 ```
 
-### Managing Destinations
+## Managing Destinations
 
 ```python
 #List existing destinations
@@ -132,20 +132,20 @@ mbsAPIinstance.listDestinationsForUser("userEmail")
 
 #Add a new destination to a user
 s3Destination = {
-	"userID" : "someID-f98c-4fbd-aa0d-b1b5551f2df3",
-	"AccountID" : "someAccount-dd51-45bf-9e2b-91f0ff9b5e41",
-	"Destination" : "s3Bucket",
-	"PackageID" : "27755"
+    "userID" : "someID-f98c-4fbd-aa0d-b1b5551f2df3",
+    "AccountID" : "someAccount-dd51-45bf-9e2b-91f0ff9b5e41",
+    "Destination" : "s3Bucket",
+    "PackageID" : "27755"
 }
 mbsAPIinstance.addDestinationToUser("userEmail", s3Destination))
 
 #Edit a user's destination
 modifiedDestination = {
-	"ID" : "destinationID-4b90-46fe-8d98-e0c0327fa794",
-	"UserID" : "MBSuserID-f98c-4fbd-aa0d-b1b5551f2df3",
-	"AccountID" : "accountID-dd51-45bf-9e2b-91f0ff9b5e41",
-	"Destination" : "s3Bucket",
-	"PackageID" : "27755"
+    "ID" : "destinationID-4b90-46fe-8d98-e0c0327fa794",
+    "UserID" : "MBSuserID-f98c-4fbd-aa0d-b1b5551f2df3",
+    "AccountID" : "accountID-dd51-45bf-9e2b-91f0ff9b5e41",
+    "Destination" : "s3Bucket",
+    "PackageID" : "27755"
 }
 mbsAPIinstance.editDestination(modifiedDestination)
 
@@ -153,7 +153,7 @@ mbsAPIinstance.editDestination(modifiedDestination)
 mbsAPIinstance.deleteDestinationForUser("destinationID", "MBSuserID")
 ```
 
-### Managing Packages \(Storage Limits\)
+## Managing Packages \(Storage Limits\)
 
 ```python
 #List existing packages
@@ -167,27 +167,27 @@ charliesPackages = mbsAPIinstance.getUsersPackages('MBSuserID')
 
 #Create a new package
 newPackage = {
-	"Name" : "100-GB Limit",
-	"Description" : "Royal Limit",
-	"StorageLimit" : 100.0,
-	"isGlacierRestoreLimit" : False,
-	"GlacierRestoreType" : 0,
-	"Cost" : 100.0,
-	"UseRestoreLimit" : True
+    "Name" : "100-GB Limit",
+    "Description" : "Royal Limit",
+    "StorageLimit" : 100.0,
+    "isGlacierRestoreLimit" : False,
+    "GlacierRestoreType" : 0,
+    "Cost" : 100.0,
+    "UseRestoreLimit" : True
 }
 mbsAPIinstance.createNewPackage(newPackage)
 
 #Edit an existing package
 editedPackage = {
-	"ID" : "44988",
-	"Enabled" : True,
-	"Name" : "100-GB Limit",
-	"Description" : "Royal Limit",
-	"StorageLimit" : 100.0,
-	"isGlacierRestoreLimit" : False,
-	"GlacierRestoreType" : 0,
-	"Cost" : 75.0,
-	"UseRestoreLimit" : True
+    "ID" : "44988",
+    "Enabled" : True,
+    "Name" : "100-GB Limit",
+    "Description" : "Royal Limit",
+    "StorageLimit" : 100.0,
+    "isGlacierRestoreLimit" : False,
+    "GlacierRestoreType" : 0,
+    "Cost" : 75.0,
+    "UseRestoreLimit" : True
 }
 mbsAPIinstance.editPackage(editedPackage)
 
@@ -195,7 +195,7 @@ mbsAPIinstance.editPackage(editedPackage)
 mbsAPIinstance.deletePackage('MBSPackageID')
 ```
 
-### Monitoring
+## Monitoring
 
 ```python
 #Get all plans execution history
@@ -205,7 +205,7 @@ mbsAPIinstance.monitoring()
 mbsAPIinstance.monitoringForuser('MBSuserID')
 ```
 
-### Managing Licenses
+## Managing Licenses
 
 ```python
 #List available licenses
@@ -224,7 +224,7 @@ mbsAPIinstance.releaseLicenseFromUser('licenseID', 'userID')
 mbsAPIinstance.revokeLicenseFromUser('licenseID', 'userID')
 ```
 
-### Managing Billing
+## Managing Billing
 
 ```python
 #Get billing information for the current month
@@ -245,7 +245,7 @@ userInfo = {
 billingInfo = mbsAPIinstance.billingDetailsForUser(userInfo)
 ```
 
-### Managing Builds
+## Managing Builds
 
 ```python
 #List available builds
@@ -262,7 +262,7 @@ mbsAPIinstance.requestCustomBuild(requiredBuild)
 latestVersionsJSON = mbsAPIinstance.getLatestVersions()
 ```
 
-### Managing Administrators
+## Managing Administrators
 
 ```python
 #List existing administrators
@@ -276,70 +276,70 @@ mbsAPIinstance.deleteAdministrator(adminID)
 
 #Create a new administrator
 newAdmin = {
-	"Email" : "test@test.com",
-	"InitialPassword" : "truepass",
-	"SendInstruction" : "true",
-	"FirstName" : "Robert",
-	"LastName" : "QA",
-	"Enabled" : "true",
-	"PermissionsModels": {
-		"Users": 1,
-		"StorageLimit": 1,
-		"Notification": 0,
-		"OnlineAccess": 1,
-		"Licenses": 1,
-		"Billing":1,
-		"Monitiring":1,
-		"RemoteDeploy":1,
-		"RemoteManagment":1,
-		"HelpMarketing":1,
-		"AuditLog":1,
-		"PSA":1,
-		"Administrators":1,
-		"Rebranding":1,
-		"Storage":1,
-		"ADS":1,
-		"LicenseBuy":1,
-		"LicenseActivate":1,
-		"StorageUsage":1,
-		"CapacityReport":1,
-		"GoogleApps":1,
-		"Dashboard":1
-	}
+    "Email" : "test@test.com",
+    "InitialPassword" : "truepass",
+    "SendInstruction" : "true",
+    "FirstName" : "Robert",
+    "LastName" : "QA",
+    "Enabled" : "true",
+    "PermissionsModels": {
+        "Users": 1,
+        "StorageLimit": 1,
+        "Notification": 0,
+        "OnlineAccess": 1,
+        "Licenses": 1,
+        "Billing":1,
+        "Monitiring":1,
+        "RemoteDeploy":1,
+        "RemoteManagment":1,
+        "HelpMarketing":1,
+        "AuditLog":1,
+        "PSA":1,
+        "Administrators":1,
+        "Rebranding":1,
+        "Storage":1,
+        "ADS":1,
+        "LicenseBuy":1,
+        "LicenseActivate":1,
+        "StorageUsage":1,
+        "CapacityReport":1,
+        "GoogleApps":1,
+        "Dashboard":1
+    }
 }
 mbsAPIinstance.createNewAdministrator(newAdmin)
 
 #Modify an existing administrator
 updatedAdmin = {
-	"AdminID" : "someID",
-	"Password" : "truepass",
-	"FirstName" : "Robert",
-	"LastName" : "QA",
-	"Enabled" : "true",
-	"PermissionsModels": {
-		"Users": 1,
-		"StorageLimit": 1,
-		"Notification": 0,
-		"OnlineAccess": 1,
-		"Licenses": 1,
-		"Billing":1,
-		"Monitiring":1,
-		"RemoteDeploy":1,
-		"RemoteManagment":1,
-		"HelpMarketing":1,
-		"AuditLog":1,
-		"PSA":1,
-		"Administrators":1,
-		"Rebranding":1,
-		"Storage":1,
-		"ADS":1,
-		"LicenseBuy":1,
-		"LicenseActivate":1,
-		"StorageUsage":1,
-		"CapacityReport":1,
-		"GoogleApps":1,
-		"Dashboard":1
-	}
+    "AdminID" : "someID",
+    "Password" : "truepass",
+    "FirstName" : "Robert",
+    "LastName" : "QA",
+    "Enabled" : "true",
+    "PermissionsModels": {
+        "Users": 1,
+        "StorageLimit": 1,
+        "Notification": 0,
+        "OnlineAccess": 1,
+        "Licenses": 1,
+        "Billing":1,
+        "Monitiring":1,
+        "RemoteDeploy":1,
+        "RemoteManagment":1,
+        "HelpMarketing":1,
+        "AuditLog":1,
+        "PSA":1,
+        "Administrators":1,
+        "Rebranding":1,
+        "Storage":1,
+        "ADS":1,
+        "LicenseBuy":1,
+        "LicenseActivate":1,
+        "StorageUsage":1,
+        "CapacityReport":1,
+        "GoogleApps":1,
+        "Dashboard":1
+    }
 }
 mbsAPIinstance.updateAdministrator(updatedAdmin)
 ```

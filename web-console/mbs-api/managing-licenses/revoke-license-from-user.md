@@ -6,7 +6,7 @@ Revoke License from User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint enables you to revoke a license from a computer. Unlike license release, license revocation deactivates a license from the user's computer but retains it in the list of licenses available to the user. 
+This endpoint enables you to revoke a license from a computer. Unlike license release, license revocation deactivates a license from the user's computer but retains it in the list of licenses available to the user.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -34,7 +34,7 @@ ID of the license to be released
 The license has been successfully returned
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned
 ```
 {% endapi-method-response-example %}
@@ -43,10 +43,10 @@ No message is returned
 {% endapi-method %}
 
 {% hint style="warning" %}
-The user shouldn't be allowed to activate licenses from the global pool automatically. Otherwise, license revocation will not work properly.  
+The user shouldn't be allowed to activate licenses from the global pool automatically. Otherwise, license revocation will not work properly.
 {% endhint %}
 
-#### Request Format
+## Request Format
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -74,28 +74,26 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information <a id="response-information-2"></a>
+## Response Information  <a id="response-information-2"></a>
 
 None if the request has been sent successfully. Otherwise, a JSON is returned containing the error message.
 
 ```python
 import requests
 def revokeLicenseFromUser(token, licenseID, userID):
-		revokeLicenseFromUserRequest = requests.post('https://api.mspbackups.com/api/Licenses/Revoke', headers = {"Authorization": "Bearer " + token}, json = {"LicenseID" : licenseID, "UserID" : userID})
+        revokeLicenseFromUserRequest = requests.post('https://api.mspbackups.com/api/Licenses/Revoke', headers = {"Authorization": "Bearer " + token}, json = {"LicenseID" : licenseID, "UserID" : userID})
 
-		if revokeLicenseFromUserRequest.status_code == 200:
-			print("200")
-			try:
-				print(revokeLicenseFromUserRequest.json())
-				return 1
-			except:
-				return 0
-		else:
-			print("Error :" + str(revokeLicenseFromUserRequest.status_code))
-			return revokeLicenseFromUserRequest.status_code()
-			
+        if revokeLicenseFromUserRequest.status_code == 200:
+            print("200")
+            try:
+                print(revokeLicenseFromUserRequest.json())
+                return 1
+            except:
+                return 0
+        else:
+            print("Error :" + str(revokeLicenseFromUserRequest.status_code))
+            return revokeLicenseFromUserRequest.status_code()
+
 revokeLicenseFromUser(MBStoken, licenseID, userID)
 ```
-
-
 

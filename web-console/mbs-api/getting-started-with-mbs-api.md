@@ -8,21 +8,21 @@ This article explains how to get started with MBS API. There are three component
 2. Generating an Access Token
 3. Sending HTTPS Requests via MBS API
 
-### Generating MBS API Credentials
+## Generating MBS API Credentials
 
-To start using MBS API, you first need to generate MBS API credentials. Later on, these credentials will be used for the initial token generation.
+To start using MBS API, you first need to generate MBS API credentials.These credentials will subsequently be used for the initial token generation.
 
 In the MBS Web Console, under **Settings**, click **General**. Then click **Change Credentials**.
 
-![](../../.gitbook/assets/mbsapiintro1.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/mbsapiintro1.png)
 
 In the newly appeared pop-up window, click **Generate**.
 
-![](../../.gitbook/assets/mbsapiintro2.png)
+![](https://github.com/rzakiev/documentation/tree/825c2f64ff90af49b1daa32930a61d866bc1dc67/.gitbook/assets/mbsapiintro2.png)
 
-Now that you have the credentials, we can proceed to request the initial authentication token that you will later use in all of the HTTPS requests to MBS. Arguably the easiest way of sending the requests is with the help of an app called _Postman_. It's a popular solution for sending all sorts of requests that has a very intuitive and easy-to-follow UI. In this tutorial, however, we will demonstrate how to send requests using the almighty Python.
+Now that the credentials are generated, proceed to request the initial authentication token that will later be used in all of the HTTPS requests to MBS. Arguably the easiest way of sending the requests is with the help of an app called _Postman_. It's a popular solution for sending all sorts of requests and it has a very intuitive and easy-to-follow UI. In this tutorial, however, we will demonstrate how to send requests using Python.
 
-### Generating an Access Token
+## Generating an Access Token
 
 First things first, you need to request a token by sending a POST request that contains the credentials from the first step.
 
@@ -40,13 +40,12 @@ import requests
 
 #MBS API credentials generated earlier
 apiCreds = {
-	"UserName" : "fakeJKZcsy",
-	"Password": "fakekjwZmAJvAQBYjja"
+    "UserName" : "fakeJKZcsy",
+    "Password": "fakekjwZmAJvAQBYjja"
 }
 
 #Creating an object of class 'request' and initializing it with MBS API URL and credentials
 authenticationRequest = requests.post('https://api.mspbackups.com/api/Provider/Login', json = apiCreds)
-
 ```
 
 As you can tell, we're essentially creating an object of class requests and use the post method to construct and send a request. The first argument in the method is the request URL that consists of the base URL and the text copied from the previous screenshot. The second argument is JSON data that contains your credentials.

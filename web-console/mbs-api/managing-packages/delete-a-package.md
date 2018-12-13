@@ -30,7 +30,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 The package has been successfully deleted!
 {% endapi-method-response-example-description %}
 
-```
+```text
 No message is returned!
 ```
 {% endapi-method-response-example %}
@@ -38,26 +38,24 @@ No message is returned!
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 None.
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 
 def deletePackage(token, packageID):
-		deletePackageRequest = requests.delete('https://api.mspbackups.com/api/Packages/' + packageID, headers = { "Authorization": "Bearer " + token})
+        deletePackageRequest = requests.delete('https://api.mspbackups.com/api/Packages/' + packageID, headers = { "Authorization": "Bearer " + token})
 
-		if deletePackageRequest.status_code == 200:
-			print('The package has been successfully deleted!')
-		else:
-			print('Error: ' + deletePackageRequest.status_code)
-			return deletePackageRequest.status_code
+        if deletePackageRequest.status_code == 200:
+            print('The package has been successfully deleted!')
+        else:
+            print('Error: ' + deletePackageRequest.status_code)
+            return deletePackageRequest.status_code
 
 deletePackage("MBSAPItoken", "packageID")
 ```
-
-
 

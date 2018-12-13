@@ -1,6 +1,6 @@
 # Releasing Licenses
 
-### Releasing Licenses <a id="releasing-licenses"></a>
+## Releasing Licenses  <a id="releasing-licenses"></a>
 
 If a license needs to be released from a computer, simply click _**Release**_ next to the transaction ID:
 

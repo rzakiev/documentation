@@ -23,7 +23,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -34,7 +34,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The user's packages have been successfully received
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'ID': 20988, 'Cost': 0.0, 'Description': "10-gig limit", 'Enabled': True, 'Name': '10 gigs', 'StorageLimit': 10.0, 'isGlacierRestoreLimit': False, 'RestoreLimit': -1.0, 'GlacierRestoreType': 0, 'UseRestoreLimit': True}
 ```
 {% endapi-method-response-example %}
@@ -42,7 +42,7 @@ The user's packages have been successfully received
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -57,7 +57,7 @@ The user's packages have been successfully received
 | GlacierRestoreType | Glacier Restore Type | Standard = 0, Bulk = 1, Expedited = 2, No = 3 |
 | UserRestoreLimit | Indicates if restore limit is used | Boolean |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -129,18 +129,18 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def getPackageStructure(token, packageID):
-		listPackageStructureRequest = requests.get('https://api.mspbackups.com/api/Packages/' + packageID, headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
-		try:
-			return listPackageStructureRequest.json()
-		except:
-			return listPackageStructureRequest.status_code
-			
+        listPackageStructureRequest = requests.get('https://api.mspbackups.com/api/Packages/' + packageID, headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
+        try:
+            return listPackageStructureRequest.json()
+        except:
+            return listPackageStructureRequest.status_code
+
 packageStructure = getPackageStructure("MBSAPItoken", "packageID")
 ```
 

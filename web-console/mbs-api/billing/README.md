@@ -21,7 +21,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -42,7 +42,7 @@ MBS user ID.
 The billing records have been successfully received
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'TotalBackupBytes': 0, 'TotalRestoreBytes': 0, 'UserID': 'someID-f98c-4fbd-aa0d-b1b5551f2df3', 'UserDetailList': [{'Computer': None, 'SizeBackup': 0, 'SizeRestore': 0, 'Prefix': None, 'AccountID': 'someID-dd51-45bf-9e2b-91f0ff9b5e41', 'Destination': 'Cloud Account (bucketName)'}]}
 ```
 {% endapi-method-response-example %}
@@ -50,7 +50,7 @@ The billing records have been successfully received
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats
+## Request Formats
 
 * application/json, text/json
 
@@ -68,7 +68,7 @@ Sample:
 
 * application/x-www-form-urlencoded
 
-#### Response Information
+## Response Information
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
@@ -88,7 +88,7 @@ Sample:
 | AccountID | Storage account ID | String |
 | Destination | Backup/Restore destination | String |
 
-#### Response Formats
+## Response Formats
 
 * application/json, text/json
 
@@ -104,27 +104,25 @@ Sample:
 <DetailModels xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/MBSAPImvc.Engine.Models">  <TotalBackupBytes>1</TotalBackupBytes>  <TotalRestoreBytes>2</TotalRestoreBytes>  <UserDetailList>    <UserDetailModels>      <AccountID>0beeabc4-bdd4-4741-88b8-d3883ae090b1</AccountID>      <Computer>sample string 1</Computer>      <Destination>sample string 6</Destination>      <Prefix>sample string 4</Prefix>      <SizeBackup>2</SizeBackup>      <SizeRestore>3</SizeRestore>    </UserDetailModels>    <UserDetailModels>      <AccountID>0beeabc4-bdd4-4741-88b8-d3883ae090b1</AccountID>      <Computer>sample string 1</Computer>      <Destination>sample string 6</Destination>      <Prefix>sample string 4</Prefix>      <SizeBackup>2</SizeBackup>      <SizeRestore>3</SizeRestore>    </UserDetailModels>  </UserDetailList>  <UserID>425a1173-c4a2-48d3-96fc-59f367bf7a2b</UserID></DetailModels>
 ```
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def billingDetailsForUser(token, criteria):
-		billingDetailsForUserRequest = requests.put('https://api.mspbackups.com/api/Billing/Details', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = criteria)
+        billingDetailsForUserRequest = requests.put('https://api.mspbackups.com/api/Billing/Details', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = criteria)
 
-		if billingDetailsForUserRequest.status_code == 200:
-			print('200')
-			return billingDetailsForUserRequest.json()
-		else:
-			return billingDetailsForUserRequest.status_code
+        if billingDetailsForUserRequest.status_code == 200:
+            print('200')
+            return billingDetailsForUserRequest.json()
+        else:
+            return billingDetailsForUserRequest.status_code
 
 criteria = {
-	"UserID" : "e6199730-f98c-4fbd-aa0d-b1b5551f2df3",
-	"Date" : ""
+    "UserID" : "e6199730-f98c-4fbd-aa0d-b1b5551f2df3",
+    "Date" : ""
 }
 
 billingDetailsForUser(MBSAPItoken, criteria)
 ```
-
-
 

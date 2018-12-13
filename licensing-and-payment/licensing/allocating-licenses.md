@@ -1,6 +1,6 @@
 # Allocating Licenses
 
-### Allocating Licenses
+## Allocating Licenses
 
 By default, licenses are automatically allocated to users from the global pool unless you deliberately limit users' available licenses in the users' settings. Namely, when creating or editing a user, you can either authorize the user to request licenses directly from the global pool or allocate them a certain number of available licenses:
 

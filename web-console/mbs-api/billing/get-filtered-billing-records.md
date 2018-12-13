@@ -17,7 +17,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -38,7 +38,7 @@ Company name
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'CurrentSpaceUsed': 0, 'AverageSpaceUsed': 0, 'TotalRestore': 0, 'StatisticBilling': [{'UserId': 'someID-f98c-4fbd-aa0d-b1b5551f2df3', 'Email': 'zakiev@me.com', 'FirstName': 'Robert', 'LastName': 'Zakiev', 'CompanyName': 'QA team', 'AverageSpace': 0, 'TotalVolumeRestore': 0, 'PlanCost': 1.0, 'StorageCost': 0.0, 'RestoreCost': 0.0, 'TotalCost': 1.0, 'LicensesUsed': 0}]}
 ```
 {% endapi-method-response-example %}
@@ -46,7 +46,7 @@ Company name
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Request Formats
+## Request Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -74,27 +74,27 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Response Information
+## Response Information
 
 Identical to the information received when requesting billing records for the current month
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests
 def billingDetailsFilteredBy(criteria, token):
-		billingDetailsRequest = requests.put('https://api.mspbackups.com/api/Billing', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token}, json = criteria)
+        billingDetailsRequest = requests.put('https://api.mspbackups.com/api/Billing', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token}, json = criteria)
 
-		if billingDetailsRequest.status_code == 200:
-			print('200')
-			return billingDetailsRequest.json()
-		else:
-			return billingDetailsRequest.status_code
+        if billingDetailsRequest.status_code == 200:
+            print('200')
+            return billingDetailsRequest.json()
+        else:
+            return billingDetailsRequest.status_code
 
 criteria = {
-	"CompanyName" : "QA team",
-	"Date" : "2018-05-15T12:38:46.8345309+00:00"
+    "CompanyName" : "QA team",
+    "Date" : "2018-05-15T12:38:46.8345309+00:00"
 }
 
 billingDetailsFilteredBy(criteria, "MBSAPItoken")

@@ -23,7 +23,7 @@ Specifies the authorization type and token. Possible value: "Bearer \*token\*"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" %}
-Specifies the type of data expected in response. Possible values:  "application/json" / "text/json" / "application/xml", "text/xml"
+Specifies the type of data expected in response. Possible values: "application/json" / "text/json" / "application/xml", "text/xml"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -34,7 +34,7 @@ Specifies the type of data expected in response. Possible values:  "application/
 The list of computers and destinations for the specified user has been successfully received
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'DestinationId': '5ca40a3a-9e91-4013-b749-9qwerty', 'ComputerName': 'roberts-mbp.qwerty'}
 ```
 {% endapi-method-response-example %}
@@ -42,14 +42,14 @@ The list of computers and destinations for the specified user has been successfu
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Response Data
+## Response Data
 
 | Parameter | Description | Value |
 | :--- | :--- | :--- |
 | DestintationId | Bucket that contains the data | String |
 | Computer's Name | The name of the computer whose data is to be deleted | String |
 
-#### Response Formats
+## Response Formats
 
 {% tabs %}
 {% tab title="JSON" %}
@@ -71,16 +71,16 @@ Sample:
 {% endtab %}
 {% endtabs %}
 
-#### Sample Python Code
+## Sample Python Code
 
 ```python
 import requests 
 def listUsersComputersandStorage(token, userID):
-		listUsersComputersandStorageRequest = requests.get('https://api.mspbackups.com/api/Users/' + userID + '/Computers', headers = {"Accept" : "application/json",
-												   "Authorization": "Bearer " + token})
-		print("List user's computers and Storage request status code:" + str(listUsersComputersandStorageRequest.status_code) + "\n")
+        listUsersComputersandStorageRequest = requests.get('https://api.mspbackups.com/api/Users/' + userID + '/Computers', headers = {"Accept" : "application/json",
+                                                   "Authorization": "Bearer " + token})
+        print("List user's computers and Storage request status code:" + str(listUsersComputersandStorageRequest.status_code) + "\n")
 
-		return listUsersComputersandStorageRequest.json()
+        return listUsersComputersandStorageRequest.json()
 
 listUsersComputersandStorage ("MBSAPItoken", "MBSuserID")
 ```
