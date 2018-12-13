@@ -2,7 +2,7 @@
 
 Managed Backup Service enables providers to interact with the service's backend via a special API. This API contains a diverse list of methods that you can incorporate into your automation workflow or various remote management solutions like ConnectWise. With it, you'll be able to automate the processes of creating users, generating packages, and granting licenses.
 
-This article explains how to get started with MBS API. There are three components to it:
+This article explains how to get started with the MBS API. There are three components to it:
 
 1. Generating MBS API Credentials
 2. Generating an Access Token
@@ -58,7 +58,7 @@ for key, value in jsonData.items():
     print (str(key) + ": " + str(value) + "\n")
 ```
 
-If you execute the code, the request will be constructed and sent. In response you should receive another JSON that contains your token. Let's run the following code to ensure that everything worked out perfectly and then print out the received JSON:
+If you execute the code, the request will be constructed and sent. In response you should receive another JSON that contains your token. Let's run the following code to ensure that everything worked out correctly and then print out the received JSON:
 
 ```text
 Status code: 200
