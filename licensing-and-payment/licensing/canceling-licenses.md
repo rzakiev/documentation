@@ -1,4 +1,0 @@
-# Canceling Licenses
-
-HOW DO YOU CANCEL LICENSES IN THE MBS WEB CONSOLE???
-
