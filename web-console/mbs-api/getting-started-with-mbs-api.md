@@ -1,6 +1,6 @@
 # Getting Started with MBS API
 
-MBS Web Console enables providers to interact with the service's backend via a special API. This API offers you a diverse set of requests that you can incorporate into your automation workflow or various remote management solutions like ConnectWise.
+Managed Backup Service enables providers to interact with the service's backend via a special API. This API contains a diverse list of methods that you can incorporate into your automation workflow or various remote management solutions like ConnectWise. With it, you'll be able to automate the processes of creating users, generating packages, and granting licenses.
 
 This article explains how to get started with MBS API. There are three components to it:
 
