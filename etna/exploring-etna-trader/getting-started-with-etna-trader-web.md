@@ -68,7 +68,7 @@ All of the companies in the file have been successfully added to the new watchli
 
 If you'd like to see how creating new watchlists and adding new securities is performed in real time, feel free to watch our video that demonstrates the process:
 
-[https://youtu.be/lkGkiVi8SfY](https://youtu.be/lkGkiVi8SfY)
+[https://www.youtube.com/watch?v=lkGkiVi8SfY&feature=youtu.be](https://www.youtube.com/watch?v=lkGkiVi8SfY&feature=youtu.be)
 
 
 
