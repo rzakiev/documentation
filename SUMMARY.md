@@ -64,5 +64,7 @@
 * [Custom Code-Signing Certificates](web-console/custom-code-signing-certificates.md)
 * [MBS Billing](web-console/mbs-billing.md)
 
-## Licensing & Payment
+## ETNA
+
+* [Getting Started with ETNA Trader Web](etna/getting-started-with-etna-trader-web.md)
 
