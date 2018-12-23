@@ -66,5 +66,7 @@
 
 ## ETNA
 
-* [Getting Started with ETNA Trader Web](etna/getting-started-with-etna-trader-web.md)
+* [Exploring ETNA Trader](etna/exploring-etna-trader/README.md)
+  * [Tab 1: Dashboard](etna/exploring-etna-trader/tab-1-dashboard.md)
+  * [Tab 3: Market Watch](etna/exploring-etna-trader/getting-started-with-etna-trader-web.md)
 
