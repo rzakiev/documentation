@@ -70,4 +70,5 @@
   * [Tab 1: Dashboard](etna/exploring-etna-trader/tab-1-dashboard.md)
   * [Tab 3: Market Watch](etna/exploring-etna-trader/getting-started-with-etna-trader-web.md)
 * [API Documentation Feedback](etna/api-documentation-feedback.md)
+* [wer](etna/wer.md)
 
